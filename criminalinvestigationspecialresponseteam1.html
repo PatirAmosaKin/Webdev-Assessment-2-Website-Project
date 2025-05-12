@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criminal Investigation Special Response Team - Fan Site</title>
+  <link rel="stylesheet" href="criminalinvestigationspecialresponseteam1.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="site-music" src="audio/zzz_music.mp3" autoplay loop muted></audio>
+
+  <!-- Top Main Navbar -->
+  <nav class="navbar">
+    <a href="https://zenless.hoyoverse.com/en-us/"><img src="images/zzz.png" alt="ZZZ Logo" class="logo"/></a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="factions.html" class="active">Faction</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="gameplay.html">Gameplay</a></li>
+      <li><a href="gacha.html">Gacha</a></li>
+    </ul>
+    <button id="toggle-music">
+      <img id="audio-icon" src="miscimages/IconVoiceOnly3.png" alt="Audio Toggle" />
+    </button>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="character-header">
+    <div class="header-content">
+      <h1 class="faction-title">CRIMINAL INVESTIGATION RESPONSE TEAM</h1>
+      <div class="character-banner">
+        <div class="faction-logo">
+          <img src="factionsimages/criminalinvestigationspecialresponseteamlogoZZZ.webp" alt="criminalinvestigationresponseteamZZZ logo">
+        </div>
+        <h2 id="char-name-banner">NICOLE DEMARA</h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Character Display -->
+  <main class="character-display">
+    <div class="character-image-container">
+      <img id="main-character-image" src="images/AstrayaoZZZ.webp" alt="Astrayao" class="character-image">
+    </div>
+
+    <div class="character-stats">
+      <div class="stat-item">
+        <div class="stat-label">CV</div>
+        <div id="char-cv" class="stat-value">Aina Suzuki</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">BIRTHDAY</div>
+        <div id="char-birthday" class="stat-value">March 12</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">HEIGHT</div>
+        <div id="char-height" class="stat-value">5'3"</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">FACTION</div>
+        <div id="char-faction" class="stat-value">Criminal Investigation Special Response Team</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">ELEMENT & ROLE</div>
+        <!--Originally intended to be for favourite food however it was changed to element and role, but I didn't change the id because wouldn't that be a funny easter egg-->
+        <div id="char-food" class="stat-value">Ether - Anamoly</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Character Navigation -->
+  <div class="character-navigation">
+    <button class="nav-arrow prev-arrow" onclick="prevCharacter()">❮</button>
+    <div class="character-thumbnails">
+      <div class="thumbnail-container">
+        <img src="images/ZhuyuanZZZ.png" alt="Zhuyuan" class="thumbnail active" onclick="showCharacter(0)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/QingyiZZZ.png" alt="Qingyi" class="thumbnail" onclick="showCharacter(1)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/SethZZZ.png" alt="Seth" class="thumbnail" onclick="showCharacter(2)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/janedoecharacter.png" alt="Janedoe" class="thumbnail" onclick="showCharacter(3)">
+      </div>
+    </div>
+    <button class="nav-arrow next-arrow" onclick="nextCharacter()">❯</button>
+  </div>
+
+  <!-- Character Tabs -->
+  <div class="character-tabs">
+    <button class="tab-button active" data-tab="background">BACKGROUND</button>
+    <button class="tab-button" data-tab="abilities">ABILITIES</button>
+    <button class="tab-button" data-tab="gallery">GALLERY</button>
+    <button class="tab-button" data-tab="trivia">TRIVIA</button>
+  </div>
+
+  <!-- Tab Content Sections -->
+  <div class="tab-content-container">
+    <!-- Background Tab -->
+    <div id="background" class="tab-content active">
+      <h3>Background</h3>
+      <p>Astrayao is a member of the Stars of Lystra, a renowned idol group in New Eridu. Born and raised in the entertainment district, she showed exceptional talent from a young age.</p>
+      <p>Her journey began when she was scouted by a talent agency at the age of 14. After years of rigorous training, she debuted as part of Stars of Lystra and quickly rose to fame for her exceptional dancing skills and charismatic stage presence.</p>
+      <p>Despite her cheerful public persona, Astrayao is known to be quite reserved in private, dedicating most of her time to perfecting her craft and supporting her fellow group members.</p>
+    </div>
+
+    <!-- Abilities Tab -->
+    <div id="abilities" class="tab-content">
+      <h3>Abilities</h3>
+      <div class="ability-item">
+        <h4>Stellar Performance</h4>
+        <p>Astrayao's signature move combines elegant dance movements with powerful energy manipulation, creating a dazzling display that both mesmerizes and damages opponents.</p>
+      </div>
+      <div class="ability-item">
+        <h4>Harmony Resonance</h4>
+        <p>A supportive ability that boosts the performance of nearby allies, increasing their attack speed and movement.</p>
+      </div>
+      <div class="ability-item">
+        <h4>Spotlight Moment</h4>
+        <p>Astrayao's ultimate ability creates a large area of effect that damages enemies while healing allies within its radius.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Tab -->
+    <div id="gallery" class="tab-content">
+      <h3>Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Performance">
+        </div>
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Casual">
+        </div>
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Concert">
+        </div>
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Promotional">
+        </div>
+      </div>
+    </div>
+
+    <!-- Trivia Tab -->
+    <div id="trivia" class="tab-content">
+      <h3>Trivia</h3>
+      <ul class="trivia-list">
+        <li>Astrayao's favorite color is sky blue, which is reflected in many of her stage costumes.</li>
+        <li>She has a pet cat named Stardust that occasionally appears in her social media posts.</li>
+        <li>Before becoming an idol, she briefly trained as a competitive figure skater.</li>
+        <li>She is fluent in three languages: English, Japanese, and Mandarin.</li>
+        <li>Her favorite food is sweet mooncake, especially during the Mid-Autumn Festival.</li>
+        <li>She collects vintage microphones and has over 20 in her personal collection.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Audio Controls
+    const audio = document.getElementById('site-music');
+    const btn = document.getElementById('toggle-music');
+    const icon = document.getElementById('audio-icon');
+
+    btn.onclick = () => {
+      if (audio.paused) {
+        audio.play();
+        icon.src = 'miscimages/IconVoiceOnly3.png';
+      } else {
+        audio.pause();
+        icon.src = 'miscimages/IconVoiceOnly2.png';
+      }
+    };
+
+    function enableAudio() {
+      audio.muted = false;
+      audio.volume = 0;
+      audio.play().catch((e) => { console.log('Autoplay prevented:', e); });
+
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05;
+          audio.volume = Math.min(vol, 1);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 100);
+
+      document.removeEventListener('click', enableAudio);
+    }
+    document.addEventListener('click', enableAudio);
+
+    // Character Data
+    const characters = [
+      {
+        name: "ZHU YUAN",
+        img: "images/zhuyuanZZZ.png",
+        cv: "Zhu Yuan",
+        birthday: "October 4",
+        height: "5'9\"",
+        faction: "Criminal Investigation Special Response Team",
+        food: "Ether - Anamoly",
+        background: `
+          <h3>Background</h3>
+          <p>Officer 148; Zhu Yuan, is an exceptional PubSec officer and current captain of the Criminal Investigation Special Response Team. A skilled martial artist and sharpshooter, Zhu Yuan uses the custom-made and versatile 'Suppressor K22' firearm in conjunction with swift punches and kicks to take down criminals. As a reputable officer, Zhu Yuan has a strict moral compass, looking down on criminals, but is shown to be okay with taking the assistance of Proxies if the situation calls for it.</p>
+          <p>Zhu Yuan is a notable perfectionist, having set herself high standards to the point she has a complex, though such perfectionism has granted her exceptional experience and a record of no unresolved cases. She also exhibits an obsession with neatness, namely when it comes to her uniform. She's shown to be cautious around cats and other small furry animals due to the fur they shed.</p>
+          <p>Zhu Yuan is shown to have a good relationship with her parents. Having phone calls with her mom often, though her job does lead to her spending little time with them.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Don't Move!</h4>
+                <p>Unleashes up to 5 attacks using martial arts, bullets, and Ether Buckshots, dealing Physical DMG and Ether DMG. The 4th or 5th hit grants 1 Enhanced Shotshell (max 1 per use). While using this skill, drag the joystick and press Basic Attack to activate Dash Attack: Firepower Offensive and reorient direction. In Assault Mode, hold Basic Attack to switch to Suppressive Mode.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Please Do Not Resist</h4>
+                <p>Hold Basic Attack to unleash up to 3 Shotshell piercing attacks, dealing Physical DMG. If Enhanced Shotshells are available, one is consumed to deal massive Ether DMG. Drag the joystick while attacking to activate Dash Attack: Overwhelming Firepower and reorient direction. In Suppressive Mode, release Basic Attack to return to Assault Mode.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge: Tactical Detour</h4>
+                <p>Perform a rapid dodge. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dash Attack: Firepower Offensive</h4>
+                <p><strong>[Assault Mode]</strong> Press Basic Attack during a dodge to shoot with a handgun, dealing Physical DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dash Attack: Overwhelming Firepower</h4>
+                <p><strong>[Suppressive Mode]</strong> Drag joystick during Basic Attack: Please Do Not Resist to unleash a Shotshell piercing attack, dealing Physical DMG. If Enhanced Shotshells are available, one is consumed to deal massive Ether DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge Counter: Fire Blast</h4>
+                <p>Press Basic Attack during a Perfect Dodge to shoot Ether Buckshot at enemies in front, dealing Ether DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Quick Assist: Covering Shot</h4>
+                <p>When the on-field character is launched, press Assist to shoot Ether Buckshot, dealing Ether DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Evasive Assist: Guarded Backup</h4>
+                <p>When the on-field character is about to be attacked, press Assist to dodge and activate Vital View. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Assist Follow-Up: Defensive Counter</h4>
+                <p>After an Evasive Assist, press Basic Attack to strike with martial arts and Shotshells, dealing Physical DMG and Ether DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Special Attack: Buckshot Blast</h4>
+                <p>Press Special Attack to shoot Ether Buckshots up to 3 times, dealing Ether DMG. Anti-Interrupt level is increased while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>EX Special Attack: Full Barrage</h4>
+                <p>With enough Energy, press EX Special Attack to shoot a series of Ether Buckshots that explode, dealing massive Ether DMG. Upon activation, gain 3 Enhanced Shotshells. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Chain Attack: Eradication Mode</h4>
+                <p>When triggered, use the Modified Master Firearm to launch a saturated attack with lasers and seeking missiles, dealing massive Ether DMG. Gain 3 Enhanced Shotshells. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Ultimate: Max Eradication Mode</h4>
+                <p>When Decibel Rating is maxed, use the Modified Master Firearm to launch a saturated attack with lasers and seeking missiles, dealing massive Ether DMG. Gain 3 Enhanced Shotshells. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Core Passive: Special Ops Ammunition</h4>
+                <p>While in Suppressive Mode, using Enhanced Shotshells increases DMG by X%. Attacking Stunned enemies boosts this DMG bonus by an additional X%. Upon entering the field, Zhu Yuan gains 6 Enhanced Shotshells.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Additional Ability: Tactical Coordination</h4>
+                <p>If another squad member is a Support character or shares the same Faction: Zhu Yuan gains +30% CRIT Rate for 10s after using an EX Special Attack, Chain Attack, or Ultimate.</p>
+            </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/zhuyuangif.webp" alt="Zhu Yuan Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/zhuyuansignalsearchgif.webp" alt="Zhu Yuan Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/zhuyuanultimategif.gif" alt="Zhu Yuan Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/zhuyuangallery.png" alt="Zhu Yuan Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>During a Trust Event, Zhu Yuan mentions a high school math teacher she had called Mr. Yan, whom she disliked due to how he looked down on the humanities subjects. During the final exams, she deliberately scored the following pattern of results, "77, 114, 89, 97, 110, 83, 117, 99, 107, 115," stating it hid a special meaning. When converted from ASCII to text, the string reads "MrYanSucks."</li>
+            <li>In Chinese, 朱 Zhū, "vermillion" is both a surname and the color of cinnabar, while 鸢 Yuān means "kite," as in the bird of prey.</li>
+            <li>Zhu Yuan shares the same Chinese voice actor, Mace (陆敏悦), with:
+              <ul>
+                <li>Albedo and Fischl in Genshin Impact</li>
+                <li>Topaz & Numby in Honkai Star Rail</li>
+                <li>Fu Hua and Herrscher of Sentience in Honkai Impact 3rd</li>
+              </ul>
+            </li>
+            <li>Zhu Yuan shares the same Japanese voice actor, Inoue Marina (井上 麻里奈), with:
+               <ul>
+                <li>Yanqing and Cyrene in Honkai Star Rail</li>
+                <li>Elysia in Honkai Impact 3rd</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      },
+      {
+        name: "QINGYI",
+        img: "images/qingyiZZZ.png",
+        cv: "01 Neo-Genesis VI",
+        birthday: "January 1",
+        height: "4'8\"",
+        faction: "Criminal Investigation Special Response Team",
+        food: "Electric - Stun",
+        background: `
+          <h3>Background</h3>
+          <p>Qingyi, or 01 Neo-Genesis VI, is an experienced Public Security officer and novice investigator. With a personally modified riot baton, she fights crime in New Eridu. The most notable thing about Qingyi is her mature personality, having built it off of Old Civilization media and her own very long life.</p>
+          <p>She spends her free time with the elderly citizens of New Eridu, playing chess and drinking hot water. Compared to other Public Security officers, Qingyi is incredibly laid-back, from playing pranks on her other members to working with Proxies.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Penultimate</h4>
+                <p>Press Basic Attack to perform up to 4 forward strikes, dealing Physical DMG and Electric DMG. During the 3rd hit, continually pressing Basic Attack initiates a continuous strike phase. Dodging during this time does not interrupt the combo. Releasing Basic Attack during the 3rd hit ends the continuous strike and transitions into the 4th hit. Prolonging the continuous attack enhances the 4th hit. Anti-Interrupt Level is increased and DMG is reduced by 40% during the 3rd and 4th hits.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Enchanted Blossoms</h4>
+                <p>Press Basic Attack to rush forward, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Flash Connect</h4>
+                <p>When Qingyi deals Electric DMG, she accumulates Flash Connect Voltage. At 75%, she enters Flash Connect state. While in this state, using Basic Attack: Enchanted Moonlit Blossoms consumes all Voltage and ends the state. Each 1% Voltage above 75% boosts Damage by 1% and Daze by 0.5%. Enchanted Moonlit Blossoms does not generate Voltage.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Enchanted Moonlit Blossoms</h4>
+                <p>While in Flash Connect state, hold Basic Attack to launch five rush attacks and a Finishing Move that deals massive Electric DMG. Releasing the button early triggers the Finishing Move. Triggering the Finishing Move just before being attacked causes a Perfect Dodge. Anti-Interrupt level is increased during rush; Qingyi is invulnerable during the Finishing Move.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge: Swan Song</h4>
+                <p>Perform a quick dash dodge. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dash Attack: Breach</h4>
+                <p>Press Basic Attack during a Dodge to rush forward and strike upward, dealing Physical DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge Counter: Lingering Sentiments</h4>
+                <p>Press Basic Attack during a Perfect Dodge to leap and perform a downward strike, dealing Electric DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Quick Assist: Wind Through the Pines</h4>
+                <p>When the on-field character is launched, press Assist to leap and strike downward, dealing Electric DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Defensive Assist: Graceful Embellishment</h4>
+                <p>When the on-field character is about to be attacked, press Assist to parry and deal massive Daze. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Assist Follow-Up: Song of the Clear River</h4>
+                <p>After a Defensive Assist, press Basic Attack to rush forward, inject electricity into the ground, then retreat and trigger an explosion, dealing Electric DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Special Attack: Sunlit Glory</h4>
+                <p>Press Special Attack to swing upward and smash down, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>EX Special Attack: Moonlit Begonia</h4>
+                <p>With enough Energy, press EX Special Attack to swing upward, leap into the air, execute a flurry of attacks, and smash down for massive Electric DMG. Hold the button to consume more Energy and increase the number of hits. Character is invulnerable while using this skill. Can follow up directly with the 3rd-hit of a Basic Attack.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Chain Attack: Tranquil Serenade</h4>
+                <p>When triggered, perform a series of powerful strikes in a wide area, dealing massive Electric DMG. Each Subjugation stack on the enemy increases this skill’s DMG by 3%. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Ultimate: Eight Sounds of Ganzhou</h4>
+                <p>When Decibel Rating is maxed, launch powerful strikes followed by a Finishing Move, dealing massive Electric DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Core Passive: Eternal Seasons</h4>
+                <p>Landing a Finishing Move from Enchanted Moonlit Blossoms applies 5 stacks of Subjugation (max 20). Each stack boosts the target’s Stun DMG multiplier by X%. Each rush attack applies 1 more stack. Triggering Perfect Dodge applies 10 stacks. Against normal or elite enemies, stacks are doubled. Subjugation resets when the target recovers from Stun.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Additional Ability: Three Verses of Farewell at Yang Pass</h4>
+                <p>If another squad member is an Attack character or shares the same Faction: Basic Attacks deal 20% more Daze. If Qingyi’s Impact exceeds 120, each point above increases ATK by 6 (max 600).</p>
+            </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/qingyiselectiongif.webp" alt="Qingyi Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/qingyisignalsearchgif.webp" alt="Qingyi Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/qingyiultimategif.gif" alt="Qingyi Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/qingyigallery.webp" alt="Qingyi Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>During the Agent Story The Case of a Missing Bangboo, it is revealed that Qingyi is a model of automaton known as a "01NG VI Criminal Investigation Automaton."</li>
+            <li>Despite the English localization referring to both Qingyi and Seth as "rookie officer" within Public Security, the original Chinese specifies their roles with greater clarity:
+              <ul>
+                <li>Qingyi's role is defined as 新人探员 xīnrén tànyuán, "novice investigator", implying she has recently become a full-fledged officer within the force.</li>
+                <li>Seth's role is defined as 实习探员 shíxí tànyuán, "practicing investigator", implying that he is not yet a full-fledged officer and is still in training.</li>
+              </ul>  
+            </li>
+            <li>In traditional Chinese opera, 青衣 qīngyī, "verdant clothes", also known as 正旦 zhèngdàn, is one of the possible Dan role subtypes.</li>
+            <li>青衣 qīngyī may also refer to low social status people, especially women servants.</li>
+            <li>Qingyi shares the same English voice actor, Kira Buckland, with Kuki Shinobu in Genshin Impact.</li>
+            <li>Qingyi shares the same Japanese voice actor, Abo Maria (阿保 まりあ), with Sedene in Genshin Impact.</li>
+            <li>Qingyi shares the same Korean voice actor, Kim Soon-mi (김순미), with:
+              <ul>
+                <li>Lan Yan in Genshin Impact</li>
+                <li>Jade in Honkai Star Rail</li>
+              </ul>  
+          </ul>
+        `
+      },
+      {
+        name: "SETH",
+        img: "images/sethZZZ.png",
+        cv: "Seth Lowell",
+        birthday: "April 8",
+        height: "5'9\"",
+        faction: "Criminal Investigation Special Response Team",
+        food: "Electric - Defense",
+        background: `
+          <h3>Background</h3>
+          <p>Seth is a member of the Criminal Investigation Special Response Team. According to the archive, Seth is currently learning the ropes in Zhu Yuan's team. He is full of passion, is hardworking, and looks forward to the day that he'll be able to hold his own in his job</p>
+          <p>Despite being a rookie officer in the Public Security Criminal Investigation Special Response Team, Seth is a key player in providing fire support during criminal investigations. He graduated at the top of his class in the academy and could have landed a higher position, but he chose the tougher path of the Special Response Team.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Lightning Strike</h4>
+                <p>Press Basic Attack to perform up to 4 consecutive strikes in front, dealing Physical DMG and Electric DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Lightning Strike - Electrified</h4>
+                <p>When Resolve reaches 75%, hold Basic Attack to unleash consecutive attacks followed by a Finishing Move, dealing Electric DMG. Hitting an enemy with the Finishing Move triggers the Quick Assist of the squad member before Seth. Anti-Interrupt level is increased during this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge: Evasion Maneuver</h4>
+                <p>Perform a rapid dodge. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dash Attack: Thunder Assault</h4>
+                <p>Press Basic Attack during a Dodge to charge forward with a shield attack, dealing Physical DMG. Damage taken during the move is reduced by 40%.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge Counter: Retreat to Advance</h4>
+                <p>Press Basic Attack during a Perfect Dodge to perform a quick downward slash, dealing Electric DMG. After the move, hold EX Special Attack to chain into Thunder Shield Rush - High Voltage. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Defensive Assist: Thundershield</h4>
+                <p>When the on-field character is about to be attacked, press Assist to parry the enemy, dealing massive Daze. Seth gains 25% Resolve. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Quick Assist: Armed Support</h4>
+                <p>When the on-field character is launched, press Assist to strike downward, dealing Electric DMG. After the move, hold EX Special Attack to chain into Thunder Shield Rush - High Voltage. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Assist Follow-Up: Public Security Ruling</h4>
+                <p>After a Defensive Assist, press Basic Attack to launch a thrust followed by two horizontal slashes, dealing Electric DMG. On hit, it triggers the Quick Assist of the squad member before Seth. Holding EX Special Attack after activation allows a faster charge into Thunder Shield Rush - High Voltage. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Special Attack: Thunder Shield Rush</h4>
+                <p>Press Special Attack to launch two forward shield strikes, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>EX Special Attack: Thunder Shield Rush - High Voltage</h4>
+                <p>With enough Energy, press EX Special Attack to unleash a series of slashes dealing massive Electric DMG. Hold to charge, dashing forward and releasing powerful strikes. Grants 75% Resolve. Anti-Interrupt level is increased during charging, and damage taken is reduced by 40%. Seth is invulnerable during the consecutive slashes.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Chain Attack: Final Judgement</h4>
+                <p>When triggered, Seth launches a series of forward slashes, dealing massive Electric DMG. Grants 75% Resolve. After the move, holding EX Special Attack enables faster charging into Thunder Shield Rush - High Voltage. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Ultimate: Justice Prevails</h4>
+                <p>When Decibel Rating is maxed, press Ultimate to launch a sequence of upward attacks followed by a Finishing Move, dealing massive Electric DMG. Grants 75% Resolve and 3 Assist Points. Hold EX Special Attack after the move to charge into Thunder Shield Rush - High Voltage. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Core Passive: Protector</h4>
+                <p>Using EX Special Attack: Thunder Shield Rush - High Voltage grants a Shield of Firm Resolve equal to X% of Seth’s ATK (max 3,000), lasting 25s. Can trigger once every 10s. When Basic Attack: Lightning Strike - Electrified or Assist Follow-Up: Public Security Ruling triggers an ally entry, that ally gains the same shield. Having this shield increases Anomaly Proficiency by Y.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Additional Ability: High Spirit</h4>
+                <p>If another squad member shares Seth's Attribute or Faction: When Chain Attack: Final Judgement or the Finishing Move of Lightning Strike - Electrified hits, the enemy's Anomaly Buildup RES to all Attributes is reduced by 20% for 20s.</p>
+            </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/sethzzzgif.webp" alt="Seth Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/sethsignalsearchgif.webp" alt="Seth Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/sethultimategif.gif" alt="Seth Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/sethgallery.jpeg" alt="Seth Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Seth Lowell shares the same English voice actor, Nazeeh Tarsha, with Alhaitham in Genshin Impact.</li>
+            <li>Despite being a Cat Thiren, Seth's uniform resembles that of a K9 unit.</li>
+            <li>Despite the English localization referring to both Seth and Qingyi as "rookie officer" within PubSec, the original Chinese specifies their roles with greater clarity:
+              <ul>
+                <li>Seth's role is defined as 实习探员 shíxí tànyuán, "practicing investigator", implying that he is not yet a full-fledged officer and is still in training.</li>
+                <li>Qingyi's role is defined as 新人探员 xīnrén tànyuán, "novice investigator", implying she has recently become a full-fledged officer within the force.</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      },
+      {
+        name: "JANE",
+        img: "images/janedoecharacter.png",
+        cv: "Jane Doe",
+        birthday: "February 7",
+        height: "5'7\"",
+        faction: "Criminal Investigation Special Response Team",
+        food: "Physical - Anamoly",
+        background: `
+          <h3>Background</h3>
+          <p>Jane, a criminal behavior specialist, has had a "colorful" career as a consultant with Public Security over the years. She is an expert in disguise, infiltration, and other investigative work. She has a bad habit of trolling others and sometimes plays harmless pranks. She's a skilled mimic, able to change her appearance and demeanor at will, making people wonder what the "real" Jane is like.</p>
+          <p>Jane has a wealth of life experience and can seamlessly blend into any environment, as though she has dabbled in everything there is to do. However, if you ask her for any further details, she'll give you a different story every time. Who knows which, if any, are true.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Dancing Blades</h4>
+                <p>Press Basic Attack to perform up to 6 consecutive attacks in front, dealing Physical DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Passion</h4>
+                <p>When Jane triggers Perfect Dodge, Defensive Assist, or deals damage, she accumulates Passion Stream. At maximum Passion Stream, Jane enters the Passion state, increasing Physical Anomaly Buildup Rate by 25%. If her Anomaly Proficiency exceeds 120, each extra point increases ATK by 2 (max 600). Passion Stream is consumed by damaging skills and regenerated by Perfect Dodge or Defensive Assist. Jane exits Passion state when Passion Stream is depleted.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Basic Attack: Salchow Jump</h4>
+                <p>Entering Passion state grants one use of this move. Hold Basic Attack to launch rapid slashes followed by a finishing strike, dealing Physical DMG. Hold to extend the attack duration; release to end early. Anti-Interrupt level is increased and damage taken is reduced by 40% during the continuous attacks. Jane is invulnerable during the finishing strike. Generates Passion Stream when used during Passion state.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge: Phantom</h4>
+                <p>Perform a quick slide dodge. Character is invulnerable while using this skill. Jane has two alternating dodges before entering Passion state. In Passion state, she can pass through enemies while dodging.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dash Attack: Edge Jump</h4>
+                <p>Press Basic Attack during a dodge to attack. After the first dodge, perform an upward slash; after the second dodge, unleash a series of slashes. Both deal Physical DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dash Attack: Phantom Thrust</h4>
+                <p>While in Passion state, press Basic Attack during a dodge to launch three quick slashes in front, dealing Physical DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge Counter: Swift Shadow</h4>
+                <p>Press Basic Attack during a Perfect Dodge to attack. After the first dodge, slash enemies followed by a downward thrust. After the second dodge, leap and perform three attack combos. All deal Physical DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge Counter: Swift Shadow Dance</h4>
+                <p>While in Passion state, press Basic Attack during a Perfect Dodge to perform multiple quick slashes in front, dealing Physical DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Quick Assist: Dark Thorn</h4>
+                <p>When the on-field character is launched, press Assist to perform multiple slashes and a downward thrust, dealing Physical DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Quick Assist: Lutz Jump</h4>
+                <p>While in Passion state, when the on-field character is launched, press Assist to perform rapid slashes in front, dealing Physical DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Defensive Assist: Last Defense</h4>
+                <p>When the on-field character is about to be attacked, press Assist to parry the enemy, dealing massive Daze. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Assist Follow-Up: Gale Sweep</h4>
+                <p>Press Basic Attack after a Defensive Assist to leap and slash enemies, followed by a wide area slash, dealing Physical DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Special Attack: Aerial Sweep</h4>
+                <p>Press Special Attack to leap into the air and launch a series of kicks, finishing with a sweeping attack, dealing Physical DMG. Anti-Interrupt level is increased while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>EX Special Attack: Aerial Sweep - Clearout</h4>
+                <p>With enough Energy, press EX Special Attack to perform a powerful airborne combo and wide sweep, dealing massive Physical DMG. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Chain Attack: Flowers of Sin</h4>
+                <p>When triggered, Jane slashes a large area in front, dealing massive Physical DMG. She enters Passion state and gains max Passion Stream. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Ultimate: Final Curtain</h4>
+                <p>When Decibel Rating is maxed, press Ultimate to perform a series of slashes followed by a finishing strike, dealing massive Physical DMG. Jane enters Passion state and gains max Passion Stream. Character is invulnerable while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Core Passive: Insight</h4>
+                <p>Jane's attacks apply the Gnawed state for 10s. If a squad member triggers Assault and causes Flinch on a Gnawed enemy, the Flinch duration extends by 5s. Assault DMG has a chance to CRIT against Gnawed enemies with a base CRIT Rate of X% and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases the CRIT Rate by Y%.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Additional Ability: Sore Spot</h4>
+                <p>If another squad member is an Anomaly character or shares Jane’s Faction: Jane's Physical Anomaly Buildup Rate increases by 20%. If the enemy is already suffering an Attribute Anomaly, her Physical Anomaly Buildup is increased by another 15%.</p>
+            </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/janedoegif.webp" alt="Jane Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/janedoesignalsearchgif.webp" alt="Jane Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/janedoeultimategif.gif" alt="Jane Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/janedoegallery.webp" alt="Jane Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Although featured alongside the Criminal Investigation Special Response Team in the Pre-Release livestream, she was officially revealed under "Faction Unknown" and remains as such on the Official ZZZ Website, meaning she does not appear on the "Characters" page. During the events of the Special Episode Undercover R&B, she is revealed to be a criminal behavior specialist working as the team's consultant.</li>
+            <li>The moveset and the names of some of Jane's skills are references to figure skating, as it is mentioned Jane used to do figure skating‍:
+              <ul>
+                <li>Most of her attacks are performed using blades hidden under her shoes;</li>
+                <li>Her Dodge is animated as skating;</li>
+                <li>Her Basic Attack during Passion state is a reference to the Salchow jump;</li>
+                <li>Her Dash Attack is a reference to one of the two main jump categories, edge jumps;</li>
+                <li>Her Quick Assist is a reference to the Lutz jump.</li>
+              </ul>
+            </li>
+            <li>Jane Doe is the feminine version of John Doe, a placeholder name used in the USA and the UK to refer to a person whose real name is unknown or intentionally concealed.</li>
+            <li>The word "doe" can be used to refer to the adult female form of many mammal species, including mice and rats.</li>
+            <li>Jane Doe shares the same Korean voice actor, Jang Ye-na (장예나), with Lingsha in Honkai Star Rail.</li>
+            <li>Jane Doe shares the same English voice actor, Kelsey Jaffer, with:
+              <ul>
+                <li>Yaoyao in Genshin Impact</li>
+                <li>AR-1368 in Honkai Star Rail</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      }
+
+    ];
+
+    // Current character index
+    let currentCharIndex = 0;
+
+    // Character Navigation Functions
+    function showCharacter(index) {
+      currentCharIndex = index;
+      const char = characters[index];
+
+      // Update character banner name
+      document.getElementById('char-name-banner').textContent = char.name;
+
+      // Update main image
+      document.getElementById('main-character-image').src = char.img;
+
+      // Update stats
+      document.getElementById('char-cv').textContent = char.cv;
+      document.getElementById('char-birthday').textContent = char.birthday;
+      document.getElementById('char-height').textContent = char.height;
+      document.getElementById('char-faction').textContent = char.faction;
+      document.getElementById('char-food').textContent = char.food;
+
+      // Update thumbnails
+      document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+
+      // Update thumbnail containers
+      document.querySelectorAll('.thumbnail-container').forEach((container, i) => {
+        container.classList.toggle('active', i === index);
+      });
+
+      // Update tab content
+      document.getElementById('background').innerHTML = char.background;
+      document.getElementById('abilities').innerHTML = char.abilities;
+      document.getElementById('gallery').innerHTML = char.gallery;
+      document.getElementById('trivia').innerHTML = char.trivia;
+    }
+
+    function nextCharacter() {
+      const nextIndex = (currentCharIndex + 1) % characters.length;
+      showCharacter(nextIndex);
+    }
+
+    function prevCharacter() {
+      const prevIndex = (currentCharIndex - 1 + characters.length) % characters.length;
+      showCharacter(prevIndex);
+    }
+
+    // Tab Navigation
+    document.querySelectorAll('.tab-button').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and content
+        document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Initialize with first character
+    showCharacter(0);
+
+    // Gallery Image Functionality
+    function setupGalleryImageClicks() {
+      // Get all gallery items
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      // Add click event to each gallery item
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Get the image inside this gallery item
+          const galleryImage = this.querySelector('img');
+
+          // Get the main character image
+          const mainImage = document.getElementById('main-character-image');
+
+          // Update the main image with the gallery image source
+          mainImage.src = galleryImage.src;
+
+          // Remove active class from all gallery items
+          galleryItems.forEach(gi => gi.classList.remove('active'));
+
+          // Add active class to the clicked gallery item
+          this.classList.add('active');
+        });
+      });
+    }
+
+    // Set up gallery functionality when tab is clicked
+    document.querySelector('[data-tab="gallery"]').addEventListener('click', function() {
+      // Wait a moment for the tab content to be updated
+      setTimeout(setupGalleryImageClicks, 100);
+    });
+
+    // Also set up gallery functionality when character changes
+    const originalShowCharacter = showCharacter;
+    showCharacter = function(index) {
+      originalShowCharacter(index);
+
+      // If gallery tab is active, set up the gallery clicks
+      if (document.querySelector('.tab-button[data-tab="gallery"]').classList.contains('active')) {
+        setTimeout(setupGalleryImageClicks, 100);
+      }
+    };
+
+
+  </script>
+
+</body>
+</html>

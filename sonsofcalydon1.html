@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sons of Calydon - Fan Site</title>
+  <link rel="stylesheet" href="sonsofcalydon1.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="site-music" src="audio/Caesar Character Demo - Calydon's Ride Theme  Zenless Zone Zero OST.mp3" autoplay loop muted></audio>
+
+  <!-- Top Main Navbar -->
+  <nav class="navbar">
+    <a href="https://zenless.hoyoverse.com/en-us/"><img src="images/zzz.png" alt="ZZZ Logo" class="logo"/></a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="factions.html" class="active">Faction</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="gameplay.html">Gameplay</a></li>
+      <li><a href="gacha.html">Gacha</a></li>
+    </ul>
+    <button id="toggle-music">
+      <img id="audio-icon" src="miscimages/IconVoiceOnly3.png" alt="Audio Toggle" />
+    </button>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="character-header">
+    <div class="header-content">
+      <h1 class="faction-title">SONS OF CALYDON</h1>
+      <div class="character-banner">
+        <div class="faction-logo">
+          <img src="factionsimages/sonsofcalydonlogoZZZ.webp" alt="SonsOfCalydon Logo">
+        </div>
+        <h2 id="char-name-banner">ASTRAYAO</h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Character Display -->
+  <main class="character-display">
+    <div class="character-image-container">
+      <img id="main-character-image" src="images/AstrayaoZZZ.webp" alt="Astrayao" class="character-image">
+    </div>
+
+    <div class="character-stats">
+      <div class="stat-item">
+        <div class="stat-label">CV</div>
+        <div id="char-cv" class="stat-value">Aina Suzuki</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">BIRTHDAY</div>
+        <div id="char-birthday" class="stat-value">March 12</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">HEIGHT</div>
+        <div id="char-height" class="stat-value">5'3"</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">FACTION</div>
+        <div id="char-faction" class="stat-value">Stars of Lystra</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">ELEMENT & ROLE</div>
+        <!--Originally intended to be for favourite food however it was changed to element and role, but I didn't change the id because wouldn't that be a funny easter egg-->
+        <div id="char-food" class="stat-value">Physical - Defense</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Character Navigation -->
+  <div class="character-navigation">
+    <button class="nav-arrow prev-arrow" onclick="prevCharacter()">❮</button>
+    <div class="character-thumbnails">
+      <div class="thumbnail-container">
+        <img src="images/CaesarZZZ.webp" alt="Caesar" class="thumbnail active" onclick="showCharacter(0)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/LucyZZZ.png" alt="Lucy" class="thumbnail" onclick="showCharacter(1)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/BurniceZZZ.webp" alt="Burnice" class="thumbnail" onclick="showCharacter(2)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/LighterZZZ.webp" alt="Lighter" class="thumbnail" onclick="showCharacter(3)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/PiperZZZ.png" alt="Piper" class="thumbnail" onclick="showCharacter(4)">
+      </div>
+    </div>
+    <button class="nav-arrow next-arrow" onclick="nextCharacter()">❯</button>
+  </div>
+
+  <!-- Character Tabs -->
+  <div class="character-tabs">
+    <button class="tab-button active" data-tab="background">BACKGROUND</button>
+    <button class="tab-button" data-tab="abilities">ABILITIES</button>
+    <button class="tab-button" data-tab="gallery">GALLERY</button>
+    <button class="tab-button" data-tab="trivia">TRIVIA</button>
+  </div>
+
+  <!-- Tab Content Sections -->
+  <div class="tab-content-container">
+    <!-- Background Tab -->
+    <div id="background" class="tab-content active">
+      <h3>Background</h3>
+      <p>Astrayao is a member of the Stars of Lystra, a renowned idol group in New Eridu. Born and raised in the entertainment district, she showed exceptional talent from a young age.</p>
+      <p>Her journey began when she was scouted by a talent agency at the age of 14. After years of rigorous training, she debuted as part of Stars of Lystra and quickly rose to fame for her exceptional dancing skills and charismatic stage presence.</p>
+      <p>Despite her cheerful public persona, Astrayao is known to be quite reserved in private, dedicating most of her time to perfecting her craft and supporting her fellow group members.</p>
+    </div>
+
+    <!-- Abilities Tab -->
+    <div id="abilities" class="tab-content">
+      <h3>Abilities</h3>
+      <div class="ability-item">
+        <h4>Stellar Performance</h4>
+        <p>Astrayao's signature move combines elegant dance movements with powerful energy manipulation, creating a dazzling display that both mesmerizes and damages opponents.</p>
+      </div>
+      <div class="ability-item">
+        <h4>Harmony Resonance</h4>
+        <p>A supportive ability that boosts the performance of nearby allies, increasing their attack speed and movement.</p>
+      </div>
+      <div class="ability-item">
+        <h4>Spotlight Moment</h4>
+        <p>Astrayao's ultimate ability creates a large area of effect that damages enemies while healing allies within its radius.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Tab -->
+    <div id="gallery" class="tab-content">
+      <h3>Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Performance">
+        </div>
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Casual">
+        </div>
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Concert">
+        </div>
+        <div class="gallery-item">
+          <img src="images/AstrayaoZZZ.webp" alt="Astrayao Promotional">
+        </div>
+      </div>
+    </div>
+
+    <!-- Trivia Tab -->
+    <div id="trivia" class="tab-content">
+      <h3>Trivia</h3>
+      <ul class="trivia-list">
+        <li>Astrayao's favorite color is sky blue, which is reflected in many of her stage costumes.</li>
+        <li>She has a pet cat named Stardust that occasionally appears in her social media posts.</li>
+        <li>Before becoming an idol, she briefly trained as a competitive figure skater.</li>
+        <li>She is fluent in three languages: English, Japanese, and Mandarin.</li>
+        <li>Her favorite food is sweet mooncake, especially during the Mid-Autumn Festival.</li>
+        <li>She collects vintage microphones and has over 20 in her personal collection.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Audio Controls
+    const audio = document.getElementById('site-music');
+    const btn = document.getElementById('toggle-music');
+    const icon = document.getElementById('audio-icon');
+
+    btn.onclick = () => {
+      if (audio.paused) {
+        audio.play();
+        icon.src = 'miscimages/IconVoiceOnly3.png';
+      } else {
+        audio.pause();
+        icon.src = 'miscimages/IconVoiceOnly2.png';
+      }
+    };
+
+    function enableAudio() {
+      audio.muted = false;
+      audio.volume = 0;
+      audio.play().catch((e) => { console.log('Autoplay prevented:', e); });
+
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05;
+          audio.volume = Math.min(vol, 1);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 100);
+
+      document.removeEventListener('click', enableAudio);
+    }
+    document.addEventListener('click', enableAudio);
+
+    // Character Data
+    const characters = [
+      {
+        name: "CAESAR",
+        img: "images/CaesarZZZ.webp",
+        cv: "Caesar King",
+        birthday: "March 16",
+        height: "5'9\"",
+        faction: "Sons of Calydon",
+        food: "Physical - Defense",
+        background: `
+          <h3>Background</h3>
+          <p>Caesar King is the daughter of the founder of the biker gang "Calydon." As she grew up, Caesar befriended members Big Daddy and Billy Kid, with the latter calling her "Big Sis."</p>
+          <p>One day, Caesar's father mysteriously disappeared, leading to the collapse of the Calydon gang. Orphaned, Caesar was taken in by Big Daddy, who started a new gang, the Sons of Calydon, and raised her to be tough and self-reliant. During the chaos, Caesar was badly injured and lost her left arm. Big Daddy got her help, and she was fitted with a prosthetic made from Billy’s spare arm, boosting her strength and combat ability. At first, she struggled to control it and earned the nickname "King Wreck-It" from Burnice and Piper. But after using her arm to save a child from a landslide, Caesar saw its value and worked to master it.</p>
+          <p>Thanks to Big Daddy’s rough guidance, Caesar grew into a strong fighter and local hero, becoming beloved in the Outer Ring. She officially joined the gang after building her first motorcycle with help from Big Daddy and the crew. Eventually, she succeeded him as leader of the Sons of Calydon and rose to become Overlord of the Outer Ring Motor League.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+
+          <div class="ability-item">
+            <h4>Rampaging Slash</h4>
+              <p>Unleashes up to six slashes in front, delivering Physical DMG in a relentless offensive sequence.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Dead End</h4>
+              <p>Consumes 1 Assist Point to throw her shield and attack all nearby enemies. The attack deals Physical DMG and grants Caesar invulnerability during its execution.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Shockwave Shield Bash</h4>
+              <p>Strikes forward with her shield, dealing Physical DMG. A Perfect Block can be triggered at the start to nullify damage and follow up with Roaring Thrust. After use, Caesar enters a guard stance that reduces damage taken and can retaliate with further attacks.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Roaring Thrust</h4>
+              <p>Follows up Shield Bash with a powerful thrust attack. Gains invulnerability if activated after a Perfect Block or Retaliation, with increased resistance to interruption otherwise.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Parry Counter</h4>
+              <p>Unleashes a powerful shield strike followed by a thrust. If hit at the start, Caesar performs a Perfect Block and can counter with Overpowered Shield Bash without consuming Energy. Also enters a guard stance post-attack to reduce damage taken.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Overpowered Shield Bash</h4>
+              <p>Executes a massive shield strike dealing high Physical DMG. If triggered by Perfect Block or Retaliation, negates damage and restores Energy. Invulnerability is granted during use.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Hog Rush</h4>
+              <p>During a dodge, Caesar charges forward with her shield, dealing Physical DMG and reducing damage taken. If struck, can trigger a Retaliation with a follow-up attack.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Eye For an Eye</h4>
+              <p>Activates after a Perfect Dodge, allowing Caesar to stab forward and deal Physical DMG while avoiding damage with invulnerability frames.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Aegis Shield</h4>
+              <p>Parries an incoming attack, dealing significant Daze to the attacker. Excellent for defense under pressure, reducing Assist Point usage and providing invulnerability during activation.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Aiding Blade</h4>
+              <p>A follow-up after a Defensive Assist, Caesar throws her shield in a spinning attack, finishing with a slash that deals Physical DMG. Can chain into a Retaliation combo.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Lane Change</h4>
+              <p>Quickly assists an airborne ally by slashing forward at enemies, dealing Physical DMG. Caesar is invulnerable during this assist.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Road Rage Slam</h4>
+              <p>Chain Attack that brings Caesar down on enemies with a massive downward strike, delivering high Physical DMG and granting her invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Savage Smash</h4>
+              <p>Caesar tosses her shield and follows with a powerful downward slam, hitting enemies in front for massive Physical DMG. Deals increased Daze against shielded enemies.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Barrier of Resilience</h4>
+              <p>Triggering key abilities grants the team a Radiant Aegis shield based on Caesar’s stats. The shield boosts Anti-Interrupt and ATK, and after it expires, a brief stat boost persists.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Battle Spirit</h4>
+              <p>When paired with a character that can use Defensive Assist or is from the same faction, Caesar applies a debuff to enemies upon key skill activations. Affected enemies take 25% more damage from all allies for 30 seconds.</p>
+          </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/caesarselectiongif.webp" alt="Caesar Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/caesarsignalsearchgif.webp" alt="Caesar Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/caesarultimategif.gif" alt="Caesar Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/caesargallery.jpg" alt="Caesar Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Caesar's prosthetic also serves as the holder and launcher for her shield.</li>
+            <li>Caesar's birthday, March 16th, is one day after the Ides of March, notoriously the date on which Julius Caesar was assassinated.</li>
+            <li>The name Caesar was the title given to the emperors of the Roman Empire, which itself was derived from Julius Caesar's cognomen.</li>
+            <li>The names of Caesar's sword and shield are likely derived from the Latin phrase Veni, vidi vici, which was popularized by Julius Caesar.</li>
+            <li>Caesar King shares the same English voice actor, Jennifer Sun Bell, with Crucabena in Genshin Impact.</li>
+            <li>Caesar King shares the same Chinese voice actor, Su Ziwu (苏子芜), with Yanfei in Genshin Impact.</li>
+            <li>Caesar King shares the same Japanese voice actor, Satō Rina (佐藤 利奈), with Eula in Genshin Impact.</li>
+          </ul>
+        `
+      },
+      {
+        name: "LUCY",
+        img: "images/lucyZZZ.png",
+        cv: "Luciana de Montefio",
+        birthday: "August 14",
+        height: "5'0\"",
+        faction: "Sons of Calydon",
+        food: "Fire - Support",
+        background: `
+          <h3>Background</h3>
+          <p>Luciana de Montefio, whose full name is Luciana Auxesis Theodoro de Montefio, is the daughter of the current head of the prestigious New Eridu Montefio family. Her personality is usually akin to that of a tsundere, seemingly acting harsh when she actually is compassionate and kind underneath, which may have been caused by her severed family ties and Outer Ring life.</p>
+          <p>Referring to herself as solely Lucy, due to her real name being far too long and not wanting to be involved with her family, she now performs the role of "Boar Thiren Overseer" for the "Leaps and Bounds Express Services Co.," a name used by the Sons of Calydon for their official logistics business.[</p>
+          <p>Due to Lucy being considered a missing person, with there being a sizable reward for her safe return to her family, she prefers to stay in the Outer Ring, seldomly returning to the city. Despite Lucy's best efforts, however, her father is aware of her whereabouts, believing that she will return home by herself at some point, as he himself went through a rebellious phase and ran away from home for over a decade, before eventually returning to don the mantle of the family business and responsibilities.</p>
+          <p>Lucy currently spends a lot of her time challenging Caesar King to duels, in the hopes of one day ruling the Outer Ring herself. However, deep down inside she actually cares for her, although she prefers to hide it, feeling flustered if confronted.</p>
+        `,
+        abilities: `
+         <h3>Abilities</h3>
+
+          <div class="ability-item">
+            <h4>Lady's Bat</h4>
+              <p>Performs up to four combo strikes dealing Physical and Fire DMG. On the fourth attack, the Guard Boars perform Spinning Swing! for additional Physical DMG.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>To Arms!</h4>
+              <p>During combat, the Guard Boars will automatically attack using random tools—bat, gloves, or slingshot—dealing Physical DMG to enemies.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Spinning Swing!</h4>
+              <p>Triggered after the fourth Basic Attack or when gaining Cheer On! The Guard Boars spin their bats to deal Physical DMG to nearby enemies. If not immediately triggered, the boars remember the required uses.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Foul Ball!</h4>
+              <p>Executes a rapid dodge. Lucy becomes invulnerable while dodging.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Fearless Boar!</h4>
+              <p>While dodging, press Basic Attack to strike enemies quickly in front, dealing Physical DMG.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Returning Tusk!</h4>
+              <p>Activate during a Perfect Dodge to strike enemies in front, dealing Fire DMG. Grants invulnerability while in use.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Hit By Pitch!</h4>
+              <p>Assists a launched ally by striking enemies in front and dealing Fire DMG. Lucy is invulnerable during the assist.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Safe on Base!</h4>
+              <p>Parries an incoming attack and inflicts massive Daze. Lucy is invulnerable while executing this Defensive Assist.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Scored a Run!</h4>
+              <p>Follow-up after Defensive Assist to strike enemies with Fire DMG. Lucy is invulnerable during the attack.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Solid Hit!</h4>
+              <p>Recall a guard boar and launch it in a Line Drive (tap) or Fly Ball (hold), creating an explosion that deals Fire DMG on impact or landing.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Home Run!</h4>
+              <p>With enough Energy, launches a guard boar in a Line Drive or Fly Ball to cause a massive explosion dealing high Fire DMG. Lucy is invulnerable during activation.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Cheer On!</h4>
+              <p>After triggering a guard boar explosion via EX Special Attack, grants allies the Cheer On! status, boosting ATK based on Lucy’s stats. Duration is 10s for Line Drive or 15s for Fly Ball. Refreshes on retrigger.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Grand Slam!</h4>
+              <p>Lucy jumps and sends a guard boar at enemies in a wide area, dealing massive Fire DMG and triggering a Quick Assist. Grants invulnerability during the attack.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Walk-Off Home Run!</h4>
+              <p>Launches all guard boars in succession, dealing massive Fire DMG in a large area. Teammates gain Energy, and the next switched-in character gains additional Energy. Triggers a Quick Assist and provides invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Crimson Mane Guard</h4>
+              <p>Using Special or EX Special Attack summons guard boars that inherit Lucy's ATK, Impact, and Anomaly Proficiency. Cheer On! buffs are enhanced for the boars, and they attack more frequently.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Batter Up!</h4>
+              <p>If another character in the squad shares Lucy’s Attribute or Faction, her guard boars also inherit her CRIT Rate and CRIT DMG.</p>
+          </div>
+
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/lucyselectiongif.webp" alt="Lucy Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lucysignalsearchgif.webp" alt="Lucy Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lucyultimategif.gif" alt="Lucy Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lucygallery.webp" alt="Lucy Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Lucy's boars, Grassy, Woody, and Bricky, are a reference to the "Three Little Pigs" fable, in which a trio of pigs build their houses out of straw, sticks, and bricks, respectively.</li>
+            <li>According to Fairy, Lucy's Inter-Knot username is "GoldenDamselInDistress."</li>
+            <li>Luciana de Montefio shares the same English voice actor, Elsie Lovelock, with Callirhoe in Genshin Impact.</li>
+          </ul>
+        `
+      },
+      {
+        name: "BURNICE",
+        img: "images/burniceZZZ.webp",
+        cv: "Burnice White",
+        birthday: "May 23",
+        height: "5'3\"",
+        faction: "Sons of Calydon",
+        food: "Fire - Anamoly",
+        background: `
+          <h3>Background</h3>
+          <p>Mixologist, fuel chemist, pyromaniac. Burnice White can be considered the jack of all-trade of the Sons of Calydon. From creating the special fuel the gang uses for their machinery, to serving up exotic cocktails; both utilizing her favorite drink: Nitro-Fuel, and in-Hollow combat, where she fights up close or from mid-range with her personally made flamethrowers, Mixer and Shaker.</p>
+          <p>Personality-wise, Burnice is an overly enthusiastic, eccentric, outgoing, optimistic and friendly kind of woman. She seems not to fully hate anyone and usually befriends those she's fighting with.</p>
+          <p>Burnice is also shown to have some immense luck on her side. From being able to survive being majorly harmed by explosives at close range, to winning three million Dennies in the lottery.</p>
+        `,
+        abilities: `
+         <h3>Abilities</h3>
+
+          <div class="ability-item">
+            <h4>Direct Flame Blend</h4>
+              <p>Performs up to 5 strikes in front, dealing Physical and Fire DMG.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Mixed Flame Blend</h4>
+              <p>While in Nitro-Fuel Cocktail, hold Basic Attack to spin and spray flames, ending with a finishing Fire DMG blow. Holding extends duration. Costs 20 Heat. Grants Anti-Interrupt. Can chain into EX Special Attack: Double Shot.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Fiery Phantom Dash</h4>
+              <p>Quick dash dodge with invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Dangerous Fermentation</h4>
+              <p>Press Basic Attack during a dodge to thrust forward and deal Fire DMG.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Fluttering Steps</h4>
+              <p>Press Basic Attack during a Perfect Dodge to launch a flurry of attacks and flames, dealing Physical and Fire DMG. Grants invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Energizing Specialty Drink</h4>
+              <p>Quick Assist triggered when launched. Unleashes flame attacks dealing Physical and Fire DMG. Grants invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Smoky Cauldron</h4>
+              <p>Defensive Assist that parries incoming attacks and inflicts massive Daze. Grants invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Scorching Dew</h4>
+              <p>Follow-up after Defensive Assist. Leaps and spins while spraying flames for Fire DMG. Grants invulnerability. Can be followed with EX Special Attack: Double Shot.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Intense Heat Aging Method</h4>
+              <p>Fires a blast of flames for Fire DMG. Hold to charge and increase damage. Grants Anti-Interrupt.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Intense Heat Stirring Method</h4>
+              <p>Sprays flames then fires a blast ahead for massive Fire DMG. Holding consumes Energy to extend spray. Joystick can be used to sidestep dodge. Grants Anti-Interrupt, 40% DMG reduction, and invincibility during dodge and blast.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Double Shot</h4>
+              <p>When using EX Special with enough Energy, triggers dual-flamethrower combo for massive Fire DMG. Holding extends duration. Grants Anti-Interrupt, 40% DMG reduction, and invincibility during blast.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Fuel-Fed Flame</h4>
+              <p>Chain Attack that dashes forward with flames, then blasts in a fan shape. Deals massive Fire DMG. Grants invulnerability and chains into Double Shot.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Glorious Inferno</h4>
+              <p>Ultimate that dashes, leaps, and sprays flames over a wide area. Triggers Quick Assist if leaping into the air. Flame spray is extended. Grants invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Nitro-Fuel Cocktail</h4>
+              <p>Spending Energy builds Heat (1.4 per 1 Energy). At 50 Heat, enters Nitro-Fuel state until Heat runs out. Entering field gives 100 Heat. While active, attacks apply Scorched. Scorched targets hit by allies trigger Afterburn, dealing Fire DMG and building Anomaly. Each 10 Anomaly Proficiency boosts Afterburn DMG by 1% (max 30%). Afterburn counts as Assist DMG and consumes 8 Heat per trigger (1.5s CD).</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Fire Kindling</h4>
+              <p>When a squadmate is Anomaly type or same Faction: Mixed Flame Blend, EX Special, or Afterburn gain +65% Fire Anomaly buildup. Burn effects from teammates last 3s longer.</p>
+          </div>
+
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/burniceselectiongif.webp" alt="Burnice Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/burnicesignalsearchgif.webp" alt="Burnice Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/burniceultimategif.gif" alt="Burnice Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/burnicegallery.jpg" alt="Burnice Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>The tubes of Burnice's flamethrowers are shown to be capable of spinning. When the tubes are facing backwards, Burnice fights with them in a similar way to tonfa.</li>
+            <li>"Burnice" is a play on the Greek female name Berenice (also spelled Bernice in English) shared by many historical figures, and the verb "to burn," which marks her passion for burning things with her flamethrowers.</li>
+            <li>Her last name, "White," may be a reference to the expression "white-hot." She is not related to Walter White in any way, totally not.</li>
+            <li>Burnice White shares the same Chinese voice actor, Ge Zirui (葛子瑞), with Huohuo in Honkai Star Rail.</li>
+            <li>Burnice White shares the same English voice actor, Risa Mei, with:</li>
+              <ul>
+                <li>Sangonomiya Kokomi in Genshin Impact</li>
+                <li>Lynx in Honkai Star Rail</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      },
+      {
+        name: "LIGHTER",
+        img: "images/lighterZZZ.webp",
+        cv: "Lorenz",
+        birthday: "December 27",
+        height: "6'1\"",
+        faction: "Sons of Calydon",
+        food: "Fire - Stun",
+        background: `
+          <h3>Background</h3>
+          <p>The "Red Scarf" and Champion of the Sons of Calydon, Lighter is an incredibly skilled fighter having experience from his time as a mercenary and underground fighter. Armed with an engine powered gauntlet, his duty is to fight the Champions of other biker gangs, a task he excels in, given he calls himself "the undefeated Champion."</p>
+          <p>According to Lighter himself, he is hemophobic, fainting from just the sight of blood. To counter this, he always wears a pair of sunglasses, which also help him manage an old eye injury from his fighting days.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+
+          <div class="ability-item">
+            <h4>Thundering Fist</h4>
+              <p>Performs up to five strikes dealing Physical and Fire DMG. The 3rd and 5th hits have joystick combo variations for extended melee chains. Holding the combo leads to a Finishing Move with invulnerability. During the 5th hit, Lighter takes 40% less DMG (80% in Morale Burst).</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Shadowed Slide</h4>
+              <p>Dodge swiftly with invulnerability. While attacking, dodge becomes a directional shuffle that does not reset the combo count.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Charging Slam</h4>
+              <p>Press Basic Attack during a dodge to deal Physical DMG to enemies in front.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Blazing Flash</h4>
+              <p>Trigger during a Perfect Dodge to strike enemies with Fire DMG and gain invulnerability. Can be followed up with the 5th Basic Attack hit.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Swift Break</h4>
+              <p>Defensive Assist that parries incoming attacks and inflicts massive Daze. Grants invulnerability during the action.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Blazing Flash - Guard</h4>
+              <p>Quick Assist that strikes enemies with Fire DMG and grants invulnerability. Follow-up with the 5th Basic Attack hit is available after use.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Charging Slam - Stab</h4>
+              <p>Follow-up after a Defensive Assist. Strikes enemies with Fire DMG and grants invulnerability. Can follow up with the 5th Basic Attack hit.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Sunrise Uppercut</h4>
+              <p>Uppercut attack that deals Fire DMG. When activated during a shuffle dodge, becomes a punch combo that doesn't reset the Basic Attack chain. Anti-Interrupt is increased during both modes.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Sunrise Uppercut - Full Distance</h4>
+              <p>EX version that launches a powerful uppercut dealing massive Fire DMG. Can be followed up for extra damage. Invulnerable during execution. Joystick version becomes a combo with no combo break, followed by the 5th Basic Attack hit.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>V-Form Scorching Sun</h4>
+              <p>Chain Attack that delivers a powerful strike in a small area, dealing massive Fire DMG. Grants invulnerability during use.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>W-Form Crowned Inferno</h4>
+              <p>Ultimate skill triggered at max Decibel Rating. Unleashes massive Fire DMG in a large area with full invulnerability.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Accelerant</h4>
+              <p>Generates Morale over time and gains extra Morale when allies use Energy. At 80+ Morale, entering battle triggers a Quick Assist. Entering Morale Burst empowers Basic Attacks and causes increased Impact with every 10 Morale consumed. In Morale Burst, hitting with combos lowers enemy Ice and Fire RES. Finishing Moves apply Collapse, extending Stun duration. Leaving Morale Burst retains unused Morale.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Fighting Spirit</h4>
+              <p>If another squad member is an Attack type or shares Faction, landing the 5th Basic Attack hit in Morale Burst grants Elation stacks to all. Each Elation stack boosts Fire/Ice DMG by 1.25%, with bonus scaling from high Impact. Chain Attacks refresh Elation duration, with a cap of 75% bonus.</p>
+          </div>
+
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/lighterselectiongif.webp" alt="Lighter Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lightersignalsearchgif.webp" alt="Lighter Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lighterultimategif.gif" alt="Lighter Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lightergallery.webp" alt="Lighter Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Lighter was once a smoker, but his mercenary friends helped him drop that habit by giving him lemon candies instead. He still keeps a flip lighter on his person.</li>
+            <li>Lighter's dog tags belong to the three mercenaries he worked with: Dane, Nick, and Ratena. It was all he could find of them after searching in the Hollow they disappeared into.</li>
+            <li>Lighter's last name was "Lorenz" in a previous phase of character development, according to the original texture of his W-Engine Blazing Laurel. However, this reference was removed upon the W-Engine's release, since him being called "Lighter Lorenz" had presumably been scrapped.</li>
+            <li>Lighter shares the same Chinese voice actor, Zhang Pei (张沛), with Thoma in Genshin Impact.</li>
+            <li>Lighter shares the same Japanese voice actor, Takahashi Hiroki (高橋 広樹), with Sugilite in Honkai Star Rail.</li>
+          </ul>
+        `
+      },
+      {
+        name: "PIPER",
+        img: "images/PiperZZZ.png",
+        cv: "Piper Wheel",
+        birthday: "October 21",
+        height: "4'11\"",
+        faction: "Sons of Calydon",
+        food: "Physical - Anamoly",
+        background: `
+          <h3>Background</h3>
+          <p>Piper is a truck driver for the Sons of Calydon. Apart from driving, she's also responsible for vehicle maintenance and other related jobs.</p>
+          <p>Her tiny stature, cute voice (though she always seems half-asleep when not driving), and adorably harmless appearance (though she's a shut-in who can't be bothered to take care of her own appearance) make it hard to imagine that she would have such a crazy driving style.</p>
+          <p>Rumor has it, Piper is a driver who doesn't need brakes. Though riding with her is a terrifying experience, she will always get you where you need to go safely, and in the shortest time possible. Of course, "safely" doesn't include any trauma that may be induced. Piper has many hobbies that don't seem to match her age, such as reading newspapers, buying lottery tickets, and collecting car magazines.</p>
+        `,
+        abilities: `
+        <h3>Abilities</h3>
+
+        <div class="ability-item">
+          <h4>Load Up and Roll Out</h4>
+            <p>Piper unleashes up to four rapid slashes with her blade, dealing Physical DMG in a straightforward offensive combo.</p>
+        </div>
+          
+        <div class="ability-item">
+          <h4>Tire Spin</h4>
+            <p>Spins in place to slash enemies around her. Can be held to increase charge level, culminating in a stronger downward smash via One Trillion Tons. During use, she gains resistance to interruptions and takes reduced damage.</p>
+        </div>
+
+        <div class="ability-item">
+          <h4>Engine Spin</h4>
+            <p>Piper channels energy to perform a high-speed spinning assault. As energy depletes or duration ends, she slams down with Really Heavy for massive Physical DMG. While active, she becomes harder to interrupt and takes less damage.</p>
+        </div>
+
+        <div class="ability-item">
+          <h4>Power Drift</h4>
+            <p>A dodge counter activated with precise timing, allowing Piper to slam down on enemies in front of her, dealing Physical DMG while avoiding incoming attacks.</p>
+        </div>
+
+        <div class="ability-item">
+          <h4>Emergency Brake</h4>
+            <p>Piper parries incoming attacks with perfect timing, dealing heavy Daze to the attacker. Especially effective when overwhelmed, reducing Assist Point consumption under pressure.</p>
+        </div>
+
+        <div class="ability-item">
+          <h4>Hold~ On~ Tight~</h4>
+            <p>Piper’s ultimate unleashes a whirling barrage of slashes followed by a powerful downward smash, dealing massive Physical DMG in a wide area. She is invulnerable during the entire attack.</p>
+        </div>
+
+        <div class="ability-item">
+          <h4>Power Charge</h4>
+            <p>Landing hits with Engine Spin or her Ultimate builds up Power stacks. Each stack boosts Piper’s Physical Anomaly Buildup Rate, stacking up to 20 times and lasting for 12 seconds.</p>
+        </div>
+
+        <div class="ability-item">
+          <h4>Synced Acceleration</h4>
+            <p>If Piper shares an Attribute or Faction with another squad member and has 20 or more Power stacks, all allies gain a 18% DMG boost, encouraging synergized team compositions.</p>
+        </div>
+
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/piperselectiongif.webp" alt="Piper Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/pipersignalsearchgif.webp" alt="Piper Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/piperultimategif.gif" alt="Piper Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/pipergallery.jpg" alt="Piper Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Despite her full name being known, Piper Wheel's name is displayed as just "Piper" in the Partner Archive.  </li>
+            <li>Piper Wheel shares the same English voice actor, Suzie Yeung, with Eula in Genshin Impact.</li>
+            <li>Piper Wheel shares the same Chinese voice actor, Wu Zheru (吴哲茹), with Lynx in Honkai Star Rail.</li>
+            <li>Lighter shares the same Chinese voice actor, Zhang Pei (张沛), with Thoma in Genshin Impact.</li>
+            <li>Piper Wheel shares the same Japanese voice actor, Iwami Manaka (石見 舞菜香), with Amber in Genshin Impact.</li>
+          </ul>
+        `
+      }
+
+    ];
+
+    // Current character index
+    let currentCharIndex = 0;
+
+    // Character Navigation Functions
+    function showCharacter(index) {
+      currentCharIndex = index;
+      const char = characters[index];
+
+      // Update character banner name
+      document.getElementById('char-name-banner').textContent = char.name;
+
+      // Update main image
+      document.getElementById('main-character-image').src = char.img;
+
+      // Update stats
+      document.getElementById('char-cv').textContent = char.cv;
+      document.getElementById('char-birthday').textContent = char.birthday;
+      document.getElementById('char-height').textContent = char.height;
+      document.getElementById('char-faction').textContent = char.faction;
+      document.getElementById('char-food').textContent = char.food;
+
+      // Update thumbnails
+      document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+
+      // Update thumbnail containers
+      document.querySelectorAll('.thumbnail-container').forEach((container, i) => {
+        container.classList.toggle('active', i === index);
+      });
+
+      // Update tab content
+      document.getElementById('background').innerHTML = char.background;
+      document.getElementById('abilities').innerHTML = char.abilities;
+      document.getElementById('gallery').innerHTML = char.gallery;
+      document.getElementById('trivia').innerHTML = char.trivia;
+    }
+
+    function nextCharacter() {
+      const nextIndex = (currentCharIndex + 1) % characters.length;
+      showCharacter(nextIndex);
+    }
+
+    function prevCharacter() {
+      const prevIndex = (currentCharIndex - 1 + characters.length) % characters.length;
+      showCharacter(prevIndex);
+    }
+
+    // Tab Navigation
+    document.querySelectorAll('.tab-button').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and content
+        document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Initialize with first character
+    showCharacter(0);
+
+    // Gallery Image Functionality
+    function setupGalleryImageClicks() {
+      // Get all gallery items
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      // Add click event to each gallery item
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Get the image inside this gallery item
+          const galleryImage = this.querySelector('img');
+
+          // Get the main character image
+          const mainImage = document.getElementById('main-character-image');
+
+          // Update the main image with the gallery image source
+          mainImage.src = galleryImage.src;
+
+          // Remove active class from all gallery items
+          galleryItems.forEach(gi => gi.classList.remove('active'));
+
+          // Add active class to the clicked gallery item
+          this.classList.add('active');
+        });
+      });
+    }
+
+    // Set up gallery functionality when tab is clicked
+    document.querySelector('[data-tab="gallery"]').addEventListener('click', function() {
+      // Wait a moment for the tab content to be updated
+      setTimeout(setupGalleryImageClicks, 100);
+    });
+
+    // Also set up gallery functionality when character changes
+    const originalShowCharacter = showCharacter;
+    showCharacter = function(index) {
+      originalShowCharacter(index);
+
+      // If gallery tab is active, set up the gallery clicks
+      if (document.querySelector('.tab-button[data-tab="gallery"]').classList.contains('active')) {
+        setTimeout(setupGalleryImageClicks, 100);
+      }
+    };
+
+  </script>
+
+</body>
+</html>

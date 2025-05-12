@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  .navbar {   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  #toggle-music {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .character {
+    position: absolute;
+    max-height: 80vh;
+    z-index: 2;
+    transition: transform 0.3s ease;
+  }
+  
+  .character:hover {
+    transform: scale(1.05);
+  }
+  
+  .lighter {
+    left: 10%;
+    bottom: 0;
+    height: 70%;
+  }
+  
+  .burnice {
+    right: 5%;
+    bottom: 0;
+    height: 70%;
+  }
+  
+  .caesar {
+    left: 35%;
+    bottom: 0;
+    height: 60%;
+  }
+  
+  .lucy {
+    right: 25%;
+    bottom: 0;
+    height: 70%;
+  }
+  
+  @media (max-width: 768px) {
+    .character {
+      max-height: 50vh;
+    }
+    .lighter {
+      left: 10%;
+      height: 30%;
+    }
+    .caesar {
+      left: 25%;
+      height: 25%;
+    }
+    .burnice {
+      right: 5%;
+      height: 30%;
+    }
+    .lucy {
+        right: 30%;
+        height: 40%;
+    }
+  }
+  
+  #toggle-music img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: #222;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+  }
+  
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ff6f61; /* highlight color */
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  #toggle-music {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenless Zone Zero - Gameplay</title>
+  <link rel="stylesheet" href="gameplay.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="site-music" src="audio/65-loading-99-101soundboards.mp3" autoplay loop muted></audio>
+
+  <!-- Top Main Navbar -->
+  <nav class="navbar">
+    <a href="https://zenless.hoyoverse.com/en-us/"><img src="images/zzz.png" alt="ZZZ Logo" class="logo"/></a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="factions.html">Faction</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="gameplay.html" class="active">Gameplay</a></li>
+      <li><a href="gacha.html">Gacha</a></li>
+    </ul>
+    <button id="toggle-music">
+      <img id="audio-icon" src="miscimages/IconVoiceOnly3.png" alt="Audio Toggle" />
+    </button>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="gameplay-header">
+    <div class="header-content">
+      <h1 class="gameplay-title">AGENT GAMEPLAY</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="gameplay-content">
+    <section class="gameplay-section">
+      <h2>Zenless Zone Zero Agent Gameplay Overview</h2>
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p>Zenless Zone Zero blends high-energy action with stylish, character-driven combat. At the heart of this experience are the Agents—the playable characters you control in fast-paced battles across New Eridu. Each Agent brings unique abilities, roles, and elemental attributes to the field, making team composition and synergy a core part of the gameplay loop.</p>
+        </div>
+        <div class="float-image float-right">
+          <img src="miscimages/gameplayzzzabout.jpg" alt="ZZZ Character">
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gameplay-section">
+      <h2>What Are Agents?</h2>
+      <div class="content-wrapper">
+        <div class="float-image float-left">
+          <img src="miscimages/zzzgameplayabout.jpg" alt="Agents">
+        </div>
+        <div class="text-content">
+          <p>Agents are the core combatants in your squad. Each belongs to a Faction and has a defined Combat Role, Attribute, and Fighting Style that shape their performance in battle. Teams consist of three Agents, and players switch between them in real-time to chain combos, apply debuffs, and trigger powerful finishers.</p>
+          <p>The player assumes the role of a Proxy (the protagonist known as Belle or Wise), a character who helps others explore alternate dimensions called Hollows. Over time, the Proxy will recruit new party members known as Agents to fight hostile entities called Ethereals and other enemies. In addition to the Proxy, players use rabbit-like robotic assistants known as Bangboos.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="attributes-section">
+      <h2>Agent Roles and Attributes</h2>
+      <p>Every Agent fits into one of several Combat Roles and is aligned with a specific elemental Attribute. These define their purpose on the team and how they interact with enemies and gear.</p>
+
+      <h3>Combat Roles</h3>
+      <div class="agent-roles">
+        <div class="role-card attack">
+          <div class="role-header">
+            <h3>Attack</h3>
+          </div>
+          <div class="role-content">
+            <p>High-damage frontliners focused on combo output.</p>
+          </div>
+        </div>
+
+        <div class="role-card support">
+          <div class="role-header">
+            <h3>Support</h3>
+          </div>
+          <div class="role-content">
+            <p>Provide healing, buffs, or debuffs that enhance the team's effectiveness.</p>
+          </div>
+        </div>
+
+        <div class="role-card defense">
+          <div class="role-header">
+            <h3>Defense</h3>
+          </div>
+          <div class="role-content">
+            <p>Durable characters who absorb damage and control the battlefield.</p>
+          </div>
+        </div>
+
+        <div class="role-card stun">
+          <div class="role-header">
+            <h3>Stun</h3>
+          </div>
+          <div class="role-content">
+            <p>Specialize in building the Daze meter to enable Chain Attacks.</p>
+          </div>
+        </div>
+
+        <div class="role-card anomaly">
+          <div class="role-header">
+            <h3>Anomaly</h3>
+          </div>
+          <div class="role-content">
+            <p>Apply and trigger elemental status effects for damage over time or crowd control.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Each role brings a distinct playstyle and function, and successful teams rely on the synergy between them.</p>
+
+      <h3>Attributes</h3>
+      <table class="attributes-table">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Attribute Anomaly</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fire</td>
+            <td>Burn</td>
+          </tr>
+          <tr>
+            <td>Electric</td>
+            <td>Shock</td>
+          </tr>
+          <tr>
+            <td>Ice</td>
+            <td>Shatter</td>
+          </tr>
+          <tr>
+            <td>Physical</td>
+            <td>Assault</td>
+          </tr>
+          <tr>
+            <td>Ether</td>
+            <td>Corrupted</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Attributes determine elemental interactions, enemy weaknesses, and gear synergies. Matching an Agent's Attribute to an enemy's vulnerability can accelerate Daze buildup and maximize damage.</p>
+
+      <div class="element-details">
+        <div class="element-card fire">
+          <h3>Fire</h3>
+          <p>Fire element agents excel at dealing continuous damage over time, bringing chaos to their foes with explosive attacks. Dealing fire damage to enemies accumulates the Fire Attribute Anomaly which triggers the Burn effect. The burn effect deals continuous fire damage and immobilizes organic enemies.</p>
+        </div>
+
+        <div class="element-card electric">
+          <h3>Electric</h3>
+          <p>Electric element agents leverage speed and agility to control the battlefield, stunning and disorienting their enemies with their attacks. Agents with this element can trigger the Shock effect, adding extra Electric damage and disrupting enemy actions, particularly for robotic enemies.</p>
+        </div>
+
+        <div class="element-card ice">
+          <h3>Ice</h3>
+          <p>Ice element agents can freeze or slow down enemies, and create barriers, making them indispensable in combat. The Shatter effect is triggered once enough Ice Attribute Anomaly is accumulated, reducing enemy mobility and dealing Ice Damage. Moreover, it also increases the Critical Damage received by the target for a duration.</p>
+        </div>
+
+        <div class="element-card physical">
+          <h3>Physical</h3>
+          <p>Unlike agents with other elements, physical element agents rely on brute force and martial prowess. Agents with this attribute excel in dealing direct, massive damage and breaking through enemy defenses. Their abilities induce the Assault effect, interrupting enemy actions and dealing massive Physical Damage. It also increases the Daze the target takes for a duration.</p>
+        </div>
+
+        <div class="element-card ether">
+          <h3>Ether</h3>
+          <p>Similar to agents with other elements, ether element agents have tremendous combat utility, both able to deal damage or provide support. Once they accumulate the Ether Attribute Anomaly, they trigger the Corruption effect, which increases the damage targets take and can interrupt energy-based enemies.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="mechanics-section">
+      <h2>Combat Mechanics</h2>
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p>Zenless Zone Zero's real-time combat is built around seamless team swaps, precise timing, and coordinated skills. Core systems include:</p>
+        </div>
+        <div class="float-image float-right">
+          <img src="miscimages/zzzgameplayabout.webp" alt="Combat Elements">
+        </div>
+      </div>
+
+      <div class="mechanics-grid">
+        <div class="mechanic-card">
+          <h3>Assist Attacks</h3>
+          <p>Instantly switch to another Agent mid-combo to extend pressure or apply effects.</p>
+        </div>
+
+        <div class="mechanic-card">
+          <h3>Chain Attacks</h3>
+          <p>Devastating finishers triggered when enemies are Dazed—often initiated by Stun Agents.</p>
+        </div>
+
+        <div class="mechanic-card">
+          <h3>Anomaly Effects</h3>
+          <p>Anomaly Agents apply status debuffs like Burn or Shock that trigger bonus effects when stacked.</p>
+        </div>
+
+        <div class="mechanic-card">
+          <h3>Perfect Dodge & Parry</h3>
+          <p>Time-based maneuvers that slow down time or open enemies up for counterattacks.</p>
+        </div>
+
+        <div class="mechanic-card">
+          <h3>Bangboo Support</h3>
+          <p>Deployable AI allies that enhance combat with additional damage, healing, or utility depending on their configuration.</p>
+        </div>
+      </div>
+
+      <p>Mastering combat means understanding when to rotate Agents, how to use each role effectively, and how to coordinate your team's flow.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gameplay-section">
+      <h2>Game Modes</h2>
+      <div class="gameplay-modes">
+        <div class="mode-card">
+          <h3>TV Mode</h3>
+          <p>Gameplay resembles a 2D dungeon crawler game, with the Proxy roaming on tiles that resemble televisions to find treasure, solve puzzles and fight enemies.</p>
+        </div>
+        <div class="mode-card">
+          <h3>Combat Mode</h3>
+          <p>If the Proxy steps on an enemy tile, the party is sent to "Combat Mode," where they fight in a 3D hack and slash-like game mode.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gameplay-section">
+      <h2>Agent Progression</h2>
+      <p>Improving your Agents is key to tackling tougher challenges. Progression includes:</p>
+      <ul>
+        <li>Leveling: Raise base stats using EXP materials.</li>
+        <li>Skill Upgrades: Improve individual abilities for more impact in battle.</li>
+        <li>W-Engines: Equip powerful gear that enhances combat performance.</li>
+        <li>Drive Discs: Set-based gear that adds passive stat bonuses and elemental boosts.</li>
+        <li>Promotion/Ascension: Increases level caps and unlocks stat growth.</li>
+      </ul>
+      <p>Progressing your Agents allows you to tackle high-level content while unlocking new gameplay layers and deeper team strategies.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="team-building-section">
+      <h2>Team Building Tips</h2>
+      <p>Building a strong team goes beyond raw power. It's about synergy, role coverage, and tactical planning:</p>
+
+      <ul class="tip-list">
+        <li>Balance Your Roles: A good beginner setup includes one Attack, one Stun or Anomaly, and one Support or Defense Agent.</li>
+        <li>Exploit Enemy Weaknesses: Match Attributes to enemy vulnerabilities to gain an edge.</li>
+        <li>Build Around Synergy: Some Agents have passives or assists that enhance specific teammates—look for these combos.</li>
+        <li>Don't Ignore Bangboos: The right Bangboo can amplify your entire team's strengths or cover its weaknesses.</li>
+        <li>Focus on Rotation Flow: Learn the rhythm of swapping Agents during combos to keep pressure high and cooldowns optimized.</li>
+      </ul>
+
+      <p>Whether you prefer calculated control or high-speed aggression, a well-composed team is essential to success in ZZZ.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="final-section">
+      <h2>Final Thoughts</h2>
+      <p>Zenless Zone Zero's Agent system is more than just character collecting—it's a deep, stylish, and reactive combat experience. With dynamic role interplay, elemental strategy, and fast-paced action, mastering your Agents is both a challenge and a thrill. Dive in, experiment with different team builds, and find the squad that fits your style.</p>
+    </section>
+  </main>
+
+  <script>
+    // Audio Controls
+    const audio = document.getElementById('site-music');
+    const btn = document.getElementById('toggle-music');
+    const icon = document.getElementById('audio-icon');
+
+    btn.onclick = () => {
+      if (audio.paused) {
+        audio.play();
+        icon.src = 'miscimages/IconVoiceOnly3.png';
+      } else {
+        audio.pause();
+        icon.src = 'miscimages/IconVoiceOnly2.png';
+      }
+    };
+
+    function enableAudio() {
+      audio.muted = false;
+      audio.volume = 0;
+      audio.play().catch((e) => { console.log('Autoplay prevented:', e); });
+
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05;
+          audio.volume = Math.min(vol, 1);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 100);
+
+      document.removeEventListener('click', enableAudio);
+    }
+    document.addEventListener('click', enableAudio);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Victoria Housekeeping Co. - Fan Site</title>
+  <link rel="stylesheet" href="victoriahousekeepingco.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="site-music" src="audio/[Zenless Zone Zero CBT 2 OST] - Camellia Golden Week Event Battle Music.mp3" autoplay loop muted></audio>
+
+  <!-- Top Main Navbar -->
+  <nav class="navbar">
+    <a href="https://zenless.hoyoverse.com/en-us/"><img src="images/zzz.png" alt="ZZZ Logo" class="logo"/></a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="factions.html" class="active">Faction</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="gameplay.html">Gameplay</a></li>
+      <li><a href="gacha.html">Gacha</a></li>
+    </ul>
+    <button id="toggle-music">
+      <img id="audio-icon" src="miscimages/IconVoiceOnly3.png" alt="Audio Toggle" />
+    </button>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="character-header">
+    <div class="header-content">
+      <h1 class="faction-title">VICTORIA HOUSEKEEPING CO.</h1>
+      <div class="character-banner">
+        <div class="faction-logo">
+          <img src="factionsimages/victoriahousekeepinglogoZZZ.webp" alt="Victoria Housekeeping Co. Logo">
+        </div>
+        <h2 id="char-name-banner">LYCAON</h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Character Display -->
+  <main class="character-display">
+    <div class="character-image-container">
+      <img id="main-character-image" src="images/LycaonZZZ.png" alt="Lycaon" class="character-image">
+    </div>
+
+    <div class="character-stats">
+      <div class="stat-item">
+        <div class="stat-label">CV</div>
+        <div id="char-cv" class="stat-value">Von Lycaon</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">BIRTHDAY</div>
+        <div id="char-birthday" class="stat-value">July 22</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">HEIGHT</div>
+        <div id="char-height" class="stat-value">6'1"</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">FACTION</div>
+        <div id="char-faction" class="stat-value">Victoria Housekeeping Co.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">ELEMENT & ROLE</div>
+        <!--Originally intended to be for favourite food however it was changed to element and role, but I didn't change the id because wouldn't that be a funny easter egg-->
+        <div id="char-food" class="stat-value">Ice - Support</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Character Navigation -->
+  <div class="character-navigation">
+    <button class="nav-arrow prev-arrow" onclick="prevCharacter()">❮</button>
+    <div class="character-thumbnails">
+      <div class="thumbnail-container">
+        <img src="images/LycaonZZZ.png" alt="Lycaon" class="thumbnail active" onclick="showCharacter(0)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/RinaZZZ.png" alt="Rina" class="thumbnail" onclick="showCharacter(1)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/Corrinzzz.png" alt="Corrin" class="thumbnail" onclick="showCharacter(2)">
+      </div>
+      <div class="thumbnail-container">
+        <img src="images/EllenZZZ.png" alt="Ellen" class="thumbnail" onclick="showCharacter(3)">
+      </div>
+    </div>
+    <button class="nav-arrow next-arrow" onclick="nextCharacter()">❯</button>
+  </div>
+
+  <!-- Character Tabs -->
+  <div class="character-tabs">
+    <button class="tab-button active" data-tab="background">BACKGROUND</button>
+    <button class="tab-button" data-tab="abilities">ABILITIES</button>
+    <button class="tab-button" data-tab="gallery">GALLERY</button>
+    <button class="tab-button" data-tab="trivia">TRIVIA</button>
+  </div>
+
+  <!-- Tab Content Sections -->
+  <div class="tab-content-container">
+    <!-- Background Tab -->
+    <div id="background" class="tab-content active">
+      <h3>Background</h3>
+      <p>Astrayao is a member of the Stars of Lystra, a renowned idol group in New Eridu. Born and raised in the entertainment district, she showed exceptional talent from a young age.</p>
+      <p>Her journey began when she was scouted by a talent agency at the age of 14. After years of rigorous training, she debuted as part of Stars of Lystra and quickly rose to fame for her exceptional dancing skills and charismatic stage presence.</p>
+      <p>Despite her cheerful public persona, Astrayao is known to be quite reserved in private, dedicating most of her time to perfecting her craft and supporting her fellow group members.</p>
+    </div>
+
+    <!-- Abilities Tab -->
+    <div id="abilities" class="tab-content">
+      <h3>Abilities</h3>
+      <div class="ability-item">
+        <h4>Stellar Performance</h4>
+        <p>Astrayao's signature move combines elegant dance movements with powerful energy manipulation, creating a dazzling display that both mesmerizes and damages opponents.</p>
+      </div>
+      <div class="ability-item">
+        <h4>Harmony Resonance</h4>
+        <p>A supportive ability that boosts the performance of nearby allies, increasing their attack speed and movement.</p>
+      </div>
+      <div class="ability-item">
+        <h4>Spotlight Moment</h4>
+        <p>Astrayao's ultimate ability creates a large area of effect that damages enemies while healing allies within its radius.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Tab -->
+    <div id="gallery" class="tab-content">
+      <h3>Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/LycaonZZZ.png" alt="Lycaon Portrait">
+        </div>
+        <div class="gallery-item">
+          <img src="images/RinaZZZ.png" alt="Rina Portrait">
+        </div>
+        <div class="gallery-item">
+          <img src="images/Corrinzzz.png" alt="Corrin Portrait">
+        </div>
+        <div class="gallery-item">
+          <img src="images/EllenZZZ.png" alt="Ellen Portrait">
+        </div>
+      </div>
+    </div>
+
+    <!-- Trivia Tab -->
+    <div id="trivia" class="tab-content">
+      <h3>Trivia</h3>
+      <ul class="trivia-list">
+        <li>Astrayao's favorite color is sky blue, which is reflected in many of her stage costumes.</li>
+        <li>She has a pet cat named Stardust that occasionally appears in her social media posts.</li>
+        <li>Before becoming an idol, she briefly trained as a competitive figure skater.</li>
+        <li>She is fluent in three languages: English, Japanese, and Mandarin.</li>
+        <li>Her favorite food is sweet mooncake, especially during the Mid-Autumn Festival.</li>
+        <li>She collects vintage microphones and has over 20 in her personal collection.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Audio Controls
+    const audio = document.getElementById('site-music');
+    const btn = document.getElementById('toggle-music');
+    const icon = document.getElementById('audio-icon');
+
+    btn.onclick = () => {
+      if (audio.paused) {
+        audio.play();
+        icon.src = 'miscimages/IconVoiceOnly3.png';
+      } else {
+        audio.pause();
+        icon.src = 'miscimages/IconVoiceOnly2.png';
+      }
+    };
+
+    function enableAudio() {
+      audio.muted = false;
+      audio.volume = 0;
+      audio.play().catch((e) => { console.log('Autoplay prevented:', e); });
+
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05;
+          audio.volume = Math.min(vol, 1);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 100);
+
+      document.removeEventListener('click', enableAudio);
+    }
+    document.addEventListener('click', enableAudio);
+
+    // Character Data
+    const characters = [
+      {
+        name: "LYCAON",
+        img: "images/LycaonZZZ.png",
+        cv: "Von Lycaon",
+        birthday: "October 4",
+        height: "6'6\"",
+        faction: "Victoria Housekeeping Co",
+        food: "Ice - Stun",
+        background: `
+          <h3>Background</h3>
+          <p>Lycaon, the substantive leader and representative of Victoria Housekeeping Co., is responsible for managing all members of the company. Rational and reliable, Lycaon is an elegant gentleman and a versatile attendant who can solve any problem. He is the cornerstone of his team and a reassuring presence.</p>
+          <p>He has a slight obsession with cleanliness, always tidying up his surroundings and unable to tolerate dirty environments. </p>
+          <p>Although Lycaon maintains his elegance and composure, his canine instincts occasionally shine through.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+          <div class="ability-item">
+            <h4>Stellar Performance</h4>
+            <p>Astrayao's signature move combines elegant dance movements with powerful energy manipulation, creating a dazzling display that both mesmerizes and damages opponents.</p>
+          </div>
+          <div class="ability-item">
+            <h4>Harmony Resonance</h4>
+            <p>A supportive ability that boosts the performance of nearby allies, increasing their attack speed and movement.</p>
+          </div>
+          <div class="ability-item">
+            <h4>Spotlight Moment</h4>
+            <p>Astrayao's ultimate ability creates a large area of effect that damages enemies while healing allies within its radius.</p>
+          </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/lycaonselectiongif.webp" alt="Lycaon Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lycaonsignalsearchgif.webp" alt="Lycaon Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lycaonultimategif.webp" alt="Lycaon Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/lycaongallery.webp" alt="Lycaon Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Von Lycaon's first name is currently unknown.</li>
+            <li>According to Corin, Lycaon uses five whole bottles of 'Ames Special Mechanical Lubricant' when performing maitainence on his legs and always seems to have eight bottles on him.</li>
+            <li>Lycaon's name is a reference to the Greek myth of King Lycaon, who cooked his son and served him to Zeus in order to trick him into eating human meat: he was thus punished by the god and transformed into a wolf. The name Lycaon derives from Ancient Greek λῠ́κος (lúkos, “wolf”), which is also the origin of the word "lycanthropy".</li>
+            <li>Von is a particle used in German names to indicate a noble lineage. It means "of", thus Von Lycaon's surname is best translated as "of Lycaon".</li>
+            <li>Von Lycaon shares the same Chinese voice actor, Wang Yuhang (王宇航), with:
+              <ul>
+                <li>Sundjatta in Genshin Impact</li>
+                <li>Svarog in Honkai Star Rail</li>
+                <li>Don Edison and Lawrence Myers in Tears of Themis</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      },
+      {
+        name: "RINA",
+        img: "images/RinaZZZ.png",
+        cv: "Alexandrina Sebastiane",
+        birthday: "September 23",
+        height: "5'8\"",
+        faction: "Victoria Housekeeping Co.",
+        food: "Electric - Support",
+        background: `
+          <h3>Background</h3>
+          <p>Rina, the head maid of Victoria Housekeeping Co., and the most senior member of the organization. She possesses beauty and grace, appearing immaculate from head to toe, with a noble demeanor and a gentle smile on her face. She places considerable importance on how she is perceived by others.</p>
+          <p>Rina is always accompanied by two Bangboo named Anastella (brown hair) and Drusilla (blonde hair), both of whom have distinct personalities. Drusilla has been with Rina for a significant period of time and displays high intelligence, capable of discerning Rina's true emotions and thoughts. Anastella, a recent addition, usually responds rather than initiates conversation and is frequently teased by Drusilla.</p>
+          <p>Rina's favorite hobby is cooking, but only a few individuals are capable of enduring the dishes she prepares.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+            <div class="ability-item">
+              <h4>Basic Attack: Whack the Dimwit</h4>
+                <p>Commands Drusilla and Anastella to attack up to 4 times, dealing Physical and Electric DMG. Other actions won't interrupt the combo.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Basic Attack (Hold): Shoo the Fool</h4>
+                <p>Hold Basic or Special Attack to swing Drusilla and Anastella for a ranged Electric DMG attack. Grants increased Anti-Interrupt protection.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge: Dress Adjustment</h4>
+                <p>Performs a rapid dodge with invulnerability.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dash Attack: Sudden Surprise</h4>
+                <p>During a dodge, press Basic Attack to trigger a piercing strike with Drusilla and Anastella, dealing Physical DMG.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Dodge Counter: Bangboo Callback</h4>
+                <p>Triggers on Perfect Dodge. Commands Drusilla and Anastella to spin forward and explode, dealing Electric DMG. Grants invulnerability.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Quick Assist: Duple Meter Allemande</h4>
+                <p>When an ally is launched, Drusilla and Anastella spin forward and explode, dealing Electric DMG. Rina is invulnerable during this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Evasive Assist: Triple Meter Courante</h4>
+                <p>Activates when an ally is about to be attacked. Dodges the hit and triggers Vital View. Grants invulnerability.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Assist Follow-Up: Quadruple Meter Gavotte</h4>
+                <p>After Evasive Assist, press Basic Attack to generate an electrical vortex with Drusilla and Anastella, dealing Electric DMG. Grants invulnerability.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Special Attack: Beat the Blockhead</h4>
+                <p>Orders Anastella to smash down, dealing Electric DMG. Anti-Interrupt level is increased while using this skill.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>EX Special Attack: Dimwit Disappearing Trick</h4>
+                <p>Consumes energy to deal repeated Electric DMG with both assistants. Grants invulnerability and triggers a Quick Assist on hit.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Chain Attack: Code of Conduct</h4>
+                <p>Drusilla and Anastella generate an electrical field, dealing massive Electric DMG. Other attacks are disabled during this, but they can be recalled with Shoo the Fool. Grants invulnerability and triggers Quick Assist.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Ultimate: The Queen's Attendants</h4>
+                <p>At max Decibel Rating, spins forward to deal massive Electric DMG. Temporarily disables other commands for Drusilla and Anastella. Recalls are possible via Shoo the Fool. Restores Energy to allies. Grants invulnerability and triggers Quick Assist.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Core Passive: Mini Destruction Partner</h4>
+                <p>Boosts the PEN Ratio of allies based on Rina’s PEN Ratio (+25% + 7.5–12%, capped at 30%) while Drusilla or Anastella are attacking. Ends when both return to Rina.</p>
+            </div>
+
+            <div class="ability-item">
+              <h4>Additional Ability: Banquet of Perfection</h4>
+                <p>When allies share the same Attribute or Faction, Shock effects last 3s longer. All Electric DMG is boosted by 10% while Shocked enemies are on the field.</p>
+            </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/rinaselectiongif.webp" alt="Rina Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/rinasignalsearchgif.webp" alt="Rina Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/rinaultimategif.gif" alt="Rina Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/rina&corringallery.webp" alt="Rina Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>On the hem of her dress is written "RINA.W — Your wish is our command," while on the head of the sharp-looking objects inserted into holders in her dress is written "Windsor Family."</li>
+            <li>Rina's player name at Godfinger arcade is "Skipping Breakfast Causes Gallstones."</li>
+            <li>Her first name, Alexandrina, is a feminine form of the name Alexander, which means "protector of men."</li>
+            <li>Her surname, Sebastiane, comes from the Latin Sebastianus from the Ancient Greek Σεβαστός Sebastós, calque of the Latin Augustus.</li>
+            <li>It may be a reference to the pop media cliché of naming butlers "Sebastian."</li>
+            <li>Her puppets' names, Anastella and Drusilla, are likely references to the ugly sisters (Anastasia and Drizella) in Walt Disney's Cinderella (1950).</li>
+            <li>Alexandrina Sebastiane shares the same Korean voice actor, Lee Eun-jo (이은조), with Lynx in Honkai Star Rail.</li>
+            <li>Alexandrina Sebastiane shares the same Chinese voice actor, Zhang Ruoyu (张若瑜), with:
+              <ul>
+                <li>Chasca in Genshin Impact</li>
+                <li>Jade in Honkai Star Rail</li>
+                <li>Female Dreamseeker in Honkai Impact 3rd</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      },
+      {
+        name: "CORRIN",
+        img: "images/Corrinzzz.png",
+        cv: "Corrin Wickes",
+        birthday: "June 2",
+        height: "4'8\"",
+        faction: "Victoria Housekeeping Co.",
+        food: "Physical - Attack",
+        background: `
+          <h3>Background</h3>
+          <p>Corin Wickes is a young maid working for Victoria Housekeeping Co. who has notable self esteem and confidence issues. Once a sickly girl who required major surgery, Corin is now an exceptional combatant who takes an intimating and devastating 'chainsaw' with her wherever she goes, be it for in-Hollow commissions, for maid-related tasks, and for everyday life.</p>
+          <p>Though timid, lacking self-esteem and constantly apologizing for anything and everything, Corin is one of Victoria Housekeeping's most reliable members, sporting a flawless performance and never failing to fulfill her tasks.</p>
+          <p>On rare occasions, Corin shows notable initiative and confidence; at times like this, she rarely stutters or apologizes.</p>
+        `,
+        abilities: `
+          <h3>Abilities</h3>
+
+          <div class="ability-item">
+            <h4>Basic Attack: Wipeout</h4>
+              <p>Unleash up to 5 slashes dealing Physical DMG. Press or hold the button during the 3rd and 5th hits to extend the chainsaw slash attack.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Dodge: Shoo!</h4>
+              <p>Performs a rapid dodge. Corin is invulnerable while using this skill.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Dash Attack: Oopsy-Daisy!</h4>
+              <p>Trigger by pressing Basic Attack during a dodge. Slashes enemies in front, dealing Physical DMG. Hold or press repeatedly to enter Crouching Shot and extend the chainsaw attack duration.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Dodge Counter: Nope!</h4>
+              <p>Press Basic Attack during a Perfect Dodge to slash enemies and detonate her chainsaw, dealing Physical DMG. Repeatedly press or hold to extend the chainsaw slash. Corin is invulnerable during this skill.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Quick Assist: Emergency Measures</h4>
+              <p>When the active character is launched, press Assist to slash and detonate her chainsaw, dealing Physical DMG. Can be extended. Corin is invulnerable during this skill.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Defensive Assist: P—Please Allow Me!</h4>
+              <p>Parries enemy attacks, dealing massive Daze. Reduces Assist Point consumption when under heavy attacks. Corin is invulnerable while using this skill.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Assist Follow-Up: Quick Sweep</h4>
+              <p>After a Defensive Assist, press Basic Attack to unleash a flurry of slashes and explode her chainsaw. Repeatedly press or hold to extend the attack. Corin is invulnerable during this skill.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Special Attack: Clean Sweep</h4>
+              <p>Deals a series of slashes and detonates the chainsaw for Physical DMG. Can be extended by pressing or holding the button. Grants increased anti-interrupt and reduces DMG taken by 40%.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>EX Special Attack: Skirt Alert</h4>
+              <p>Consumes Energy to perform multiple slashes and a chainsaw detonation for massive Physical DMG. Press or hold to extend at additional Energy cost. Corin is invulnerable and gains DMG reduction and anti-interrupt during the extended spin.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Chain Attack: Sorry...</h4>
+              <p>Trigger during a Chain Attack to deliver a powerful slash dealing massive Physical DMG in a small area. Press or hold to extend the chainsaw attack. Corin is invulnerable during this skill.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Ultimate: Very, Very Sorry!</h4>
+              <p>At max Decibel Rating, unleash a powerful slash for massive Physical DMG in a small area. Press or hold to extend the chainsaw attack. Corin is invulnerable during this skill.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Core Passive: Hyperfocus</h4>
+              <p>When unleashing a continuous extended chainsaw slash, the skill's DMG increases by a scaling percentage.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Additional Ability: Cleanup Assistance</h4>
+              <p>If another squad member shares Attribute or Faction, Corin deals 35% more DMG to Stunned enemies.</p>
+          </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/corrinselectiongif.webp" alt="Corrin Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/corrinsignalsearchgif.webp" alt="Corrin Signal Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/corrinultimategif.webp" alt="Corrin Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/rina&corringallery.webp" alt="Corrin Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>In Corin's Mindscape Image Full, there is what appears to be a large scar surrounding her right arm, which might be related to the "major surgery" mentioned in her Agent Intel.</li>
+            <li>In a now-deleted Twitter post and in her HoYoLab introduction by the official ZZZ account, Corin was mentioned to be 16 years of age. This information has now been scrubbed. The twitter post is as followed: <strong> Um... My name's Corin, 16, from Victoria Housekeeping Co. I'm a Gemini; Rh-negative blood type; I like cleaning. Peel an apple? Can I use my chainsaw? Or maybe an axe —Oh... No? OK, sorry... —Her introduction on Twitter.</strong></li>
+            <li>The Inter-Knot post "(Legal Help) I got a cleaning lady but she injured three home invaders," although not specifically stated, heavily implies Corin is the one involved.</li>
+            <li>Corin's blood type: RH negative, is the classification for blood that lacks the D antigen, a protein found on the surfaces of red blood cells of people with RH blood.</li>
+            <li>Corin's weapon is described as a chainsaw, however, the weapon is more akin to a circular saw on a pole like the head of an axe.</li>
+            <li>Corin Wickes shares the same English voice actor, Chloe Eves, with Greater Lord Rukkhadevata and Haypasia in Genshin Impact.</li>
+            <li>Corin Wickes shares the same Chinese voice actor, Mufei (沐霏), with:
+              <ul>
+                <li>Aloy, Greater Lord Rukkhadevata, and Wanjiru in Genshin Impact</li>
+                <li>Cocolia and Cirrus in Honkai Star Rail</li>
+                <li>Herrscher of Dominance (Puppet) in Honkai Impact 3rd</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      },
+      {
+        name: "ELLEN",
+        img: "images/EllenZZZ.png",
+        cv: "Ellen Joe",
+        birthday: "January 4",
+        height: "5'3\"",
+        faction: "Victoria Housekeeping Co.",
+        food: "Ice - Attack",
+        background: `
+          <h3>Background</h3>
+          <p>Ellen Joe is a laid-back Shark Thiren that attends school in New Eridu who hates activities that require energy. Despite her personality and aloofness, Ellen is a significantly popular student at the school, though she prefers spending time with fellow students Ruby, Monna, and Lynn at karaoke bars, Godfinger and more.</p>
+          <p>Ellen's school life is balanced with her job as a maid for Victoria Housekeeping Co., where she specializes in security management and garden maintenance. Though she dislikes physical activities, the support of her teammates that she considers her friend as well, allow her to unleash formidable power, becoming a significant threat in combat. However, this comes at the caveat of consuming a lot of her energy, which is why she has a lollipop on her person at most times.</p>
+          <p>Ellen is shown to be constantly tired, possibly an effect of having to attend school and do commissions on a day-to-day basis.</p>
+        `,
+        abilities: `
+        <h3>Abilities</h3>
+          <div class="ability-item">
+            <h4>Basic Attack: Saw Teeth Trimming</h4>
+              <p>Performs up to 3 consecutive slashes dealing Physical DMG. While Flash Freeze is active, it switches to Flash Freeze Trimming, delivering Ice DMG attacks that consume Flash Freeze Charges.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Dash Attack: Arctic Ambush</h4>
+              <p>While dashing, Ellen performs a spinning slash followed by a scissor strike, dealing Ice DMG. Charged versions deal higher damage and always trigger Shatter on Frozen enemies.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Special Attacks: Drift & Tail Swipe</h4>
+              <p>Drift delivers a tail sweep for Ice DMG. EX Special Attack: Tail Swipe deals massive Ice DMG and grants Flash Freeze Charges. Can be followed by EX Special Attack: Sharknami for chained heavy strikes.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Dodge: Vortex & Roaming Hunt</h4>
+              <p>Grants invulnerability while dodging. Holding dodge lets Ellen enter Roaming state, enabling fast movement and access to Dash Attacks. Perfect Dodge triggers Quick Charge, enhancing Arctic Ambush speed.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Assist Abilities</h4>
+              <p>Includes Quick Assist: Shark Sentinel, Defensive Assist: Wavefront Impact, and Assist Follow-Up: Shark Cruiser — all dealing Ice DMG and offering invulnerability or Daze effects.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Chain Attack: Avalanche</h4>
+              <p>Triggers a powerful ice storm, dealing massive Ice DMG with full invulnerability during execution.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Ultimate: Endless Winter</h4>
+              <p>Once Decibel Rating is full, Ellen crashes down with an ice storm, dealing massive Ice DMG to all enemies. Invulnerability is granted throughout the animation.</p>
+          </div>
+
+          <div class="ability-item">
+            <h4>Core Abilities</h4>
+              <p><strong>Sharp-Toothed:</strong> Increases CRIT DMG for charged scissor strikes and Flash Freeze Trimming.<br>
+              <strong>Rising Storm:</strong> When paired with characters of the same Attribute/Faction, her Ice DMG increases progressively, stacking up to 10 times.</p>
+          </div>
+        `,
+        gallery: `
+          <h3>Gallery</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallerymedia/ellenjoeselectiongif.webp" alt="Ellen Selection GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/ellenjoesignalsearchgif.webp" alt="Ellen Signal Search GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/ellenjoeultimategif.gif" alt="Ellen Ultimate GIF">
+            </div>
+            <div class="gallery-item">
+              <img src="gallerymedia/ellenjoegallery.webp" alt="Ellen Wallpaper">
+            </div>
+          </div>
+        `,
+        trivia: `
+          <h3>Trivia</h3>
+          <ul class="trivia-list">
+            <li>Whilst Ellen's weapon is classified as scissors in numerous official sources, its design resembles more hedge trimmers than traditional scissors.</li>
+            <li>Ellen is the only member of Victoria Housekeeping that can withstand eating Rina's food.</li>
+            <li>Ellen's EX Special Attack: Sharknami shares its name with an in-game film series, which are likely a reference to the Sharknado film series.</li>
+            <li>The name of Ellen's default outfit, "Ellen Scissorhands," references the title of the film Edward Scissorhands.</li>
+            <li>Ellen Joe shares the same English voice actor, Giselle Fernandez, with Aloy in Genshin Impact.</li>
+            <li>Ellen Joe shares the same Japanese voice actor, Wakayama Shion (若山 詩音), with:
+              <ul>
+                <li>Lee Yan in Genshin Impact</li>
+                <li>Yunli in Honkai Star Rail</li>
+              </ul>
+            </li>
+          </ul>
+        `
+      }
+
+    ];
+
+    // Current character index
+    let currentCharIndex = 0;
+
+    // Character Navigation Functions
+    function showCharacter(index) {
+      currentCharIndex = index;
+      const char = characters[index];
+
+      // Update character banner name
+      document.getElementById('char-name-banner').textContent = char.name;
+
+      // Update main image
+      document.getElementById('main-character-image').src = char.img;
+
+      // Update stats
+      document.getElementById('char-cv').textContent = char.cv;
+      document.getElementById('char-birthday').textContent = char.birthday;
+      document.getElementById('char-height').textContent = char.height;
+      document.getElementById('char-faction').textContent = char.faction;
+      document.getElementById('char-food').textContent = char.food;
+
+      // Update thumbnails
+      document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+
+      // Update thumbnail containers
+      document.querySelectorAll('.thumbnail-container').forEach((container, i) => {
+        container.classList.toggle('active', i === index);
+      });
+
+      // Update tab content
+      document.getElementById('background').innerHTML = char.background;
+      document.getElementById('abilities').innerHTML = char.abilities;
+      document.getElementById('gallery').innerHTML = char.gallery;
+      document.getElementById('trivia').innerHTML = char.trivia;
+    }
+
+    function nextCharacter() {
+      const nextIndex = (currentCharIndex + 1) % characters.length;
+      showCharacter(nextIndex);
+    }
+
+    function prevCharacter() {
+      const prevIndex = (currentCharIndex - 1 + characters.length) % characters.length;
+      showCharacter(prevIndex);
+    }
+
+    // Tab Navigation
+    document.querySelectorAll('.tab-button').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and content
+        document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Initialize with first character
+    showCharacter(0);
+
+    // Gallery Image Functionality
+    function setupGalleryImageClicks() {
+      // Get all gallery items
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      // Add click event to each gallery item
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Get the image inside this gallery item
+          const galleryImage = this.querySelector('img');
+
+          // Get the main character image
+          const mainImage = document.getElementById('main-character-image');
+
+          // Update the main image with the gallery image source
+          mainImage.src = galleryImage.src;
+
+          // Remove active class from all gallery items
+          galleryItems.forEach(gi => gi.classList.remove('active'));
+
+          // Add active class to the clicked gallery item
+          this.classList.add('active');
+        });
+      });
+    }
+
+    // Set up gallery functionality when tab is clicked
+    document.querySelector('[data-tab="gallery"]').addEventListener('click', function() {
+      // Wait a moment for the tab content to be updated
+      setTimeout(setupGalleryImageClicks, 100);
+    });
+
+    // Also set up gallery functionality when character changes
+    const originalShowCharacter = showCharacter;
+    showCharacter = function(index) {
+      originalShowCharacter(index);
+
+      // If gallery tab is active, set up the gallery clicks
+      if (document.querySelector('.tab-button[data-tab="gallery"]').classList.contains('active')) {
+        setTimeout(setupGalleryImageClicks, 100);
+      }
+    };
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 60px; /* Add space for fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+  background-color: rgba(25, 25, 25, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px rgba(128, 0, 255, 0.7));
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #8000ff, #cc00ff);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #cc00ff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #cc00ff;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background: linear-gradient(to right, #8000ff, #cc00ff);
+}
+
+#toggle-music {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#toggle-music:hover {
+  transform: scale(1.1);
+}
+
+#toggle-music img {
+  width: 30px;
+  height: 30px;
+}

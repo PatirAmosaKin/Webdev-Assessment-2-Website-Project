@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZZZ - Factions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Custom styling for navbar elements in factions page */
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .factions-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 100px; /* Increased to account for navbar height */
+            position: relative;
+        }
+
+        .faction-layout {
+            width: 100%;
+            max-width: 1500px;
+            height: 100vh;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 40px;
+            padding: 40px;
+            place-items: center;
+        }
+
+        .faction-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 380px;
+            max-height: 280px;
+        }
+
+        .faction-item:hover {
+            transform: scale(1.15);
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .faction-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 280px;
+            max-width: 380px;
+        }
+
+        .faction-item:hover img {
+            filter: brightness(1.3);
+        }
+
+        .faction-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .faction-item:hover::after {
+            opacity: 1;
+        }
+
+        .center-logo {
+            grid-column: 2;
+            grid-row: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            position: relative;
+        }
+
+        .center-logo::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            animation: pulse 3s infinite alternate;
+        }
+
+        .center-logo img {
+            max-width: 65%;
+            max-height: 65%;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+            transition: all 0.5s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(2deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        /* Faction positions */
+        .faction-1 { grid-column: 1; grid-row: 1; justify-self: center; }
+        .faction-2 { grid-column: 2; grid-row: 1; justify-self: center; }
+        .faction-3 { grid-column: 3; grid-row: 1; justify-self: center; }
+        .faction-4 { grid-column: 1; grid-row: 2; justify-self: center; }
+        .faction-5 { grid-column: 3; grid-row: 2; justify-self: center; }
+        .faction-6 { grid-column: 1; grid-row: 3; justify-self: center; }
+        .faction-7 { grid-column: 2; grid-row: 3; justify-self: center; }
+        .faction-8 { grid-column: 3; grid-row: 3; justify-self: center; }
+
+        @media (max-width: 768px) {
+            .faction-layout {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                height: auto;
+            }
+
+            .center-logo {
+                grid-column: 1 / span 2;
+                grid-row: 3;
+            }
+
+            .faction-1 { grid-column: 1; grid-row: 1; }
+            .faction-2 { grid-column: 2; grid-row: 1; }
+            .faction-3 { grid-column: 1; grid-row: 2; }
+            .faction-4 { grid-column: 2; grid-row: 2; }
+            .faction-5 { grid-column: 1; grid-row: 4; }
+            .faction-6 { grid-column: 2; grid-row: 4; }
+            .faction-7 { grid-column: 1; grid-row: 5; }
+            .faction-8 { grid-column: 2; grid-row: 5; }
+        }
+    </style>
+<link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <audio id="site-music" src="audio/zzz_music.mp3" autoplay loop muted></audio>
+    <!-- Top Main Navbar -->
+    <nav class="navbar">
+        <a href="https://zenless.hoyoverse.com/en-us/"><img src="images/zzz.png" alt="ZZZ Logo" class="logo"/></a>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="factions.html" class="active">Faction</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="gameplay.html">Gameplay</a></li>
+            <li><a href="gacha.html">Gacha</a></li>
+        </ul>
+        <button id="toggle-music">
+            <img id="audio-icon" src="miscimages/IconVoiceOnly3.png" alt="Audio Toggle" />
+        </button>
+    </nav>
+
+    <div class="factions-container">
+        <div class="faction-layout">
+            <!-- Belobog Heavy Industries -->
+            <a href="belobogheavyindustries.html" class="faction-item faction-1">
+                <img src="factionsimages/belobogheavyindustriesZZZ.webp" alt="Belobog Heavy Industries">
+            </a>
+
+            <!-- Hollow Special Operations Division 6 -->
+            <a href="HollowSpecialOperationsSection6(1).html" class="faction-item faction-2">
+                <img src="factionsimages/hollowspecialoperationsdivision6ZZZ.webp" alt="Hollow Special Operations Division 6">
+            </a>
+
+            <!-- Victoria Housekeeping -->
+            <a href="VictoriaHousekeepingCo.html" class="faction-item faction-3">
+                <img src="factionsimages/victoriahousekeepingZZZ.webp" alt="Victoria Housekeeping Co.">
+            </a>
+
+            <!-- Criminal Investigation Response Team -->
+            <a href="criminalinvestigationspecialresponseteam1.html" class="faction-item faction-4">
+                <img src="factionsimages/criminalinvestigationresponseteamZZZ.jpeg" alt="Criminal Investigation Response Team">
+            </a>
+
+            <!-- Center Logo -->
+            <div class="center-logo">
+                <img src="images/zzz.png" alt="ZZZ Logo">
+            </div>
+
+            <!-- Cunninghares -->
+            <a href="cunninghares1.html" class="faction-item faction-5">
+                <img src="factionsimages/cunningharesZZZ.webp" alt="Cunninghares">
+            </a>
+
+            <!-- Sons of Calydon -->
+            <a href="sonsofcalydon1.html" class="faction-item faction-6">
+                <img src="factionsimages/sonsofcalydonZZZ.png" alt="Sons of Calydon">
+            </a>
+
+            <!-- Stars of Lystra -->
+            <a href="starsoflystrasample.html" class="faction-item faction-7">
+                <img src="factionsimages/starsoflystraZZZ.avif" alt="Stars of Lystra">
+            </a>
+            
+            <a href="obolsquad.html" class="faction-item faction-8">
+                <img src="factionsimages/obolsquad.jpg" alt="Obol Squad">
+            </a>
+
+            <!-- Random Play was meant to be added but I could not add it without ruining the overall structure of the page and placements of the images 
+            <a href="randomplay.html" class="faction-item faction-8">
+                <img src="factionsimages/randomplayZZZ.webp" alt="Random Play">
+            </a>-->
+
+        </div>
+    </div>
+
+    <script>
+        // Audio Controls
+        const audio = document.getElementById('site-music');
+        const btn = document.getElementById('toggle-music');
+        const icon = document.getElementById('audio-icon');
+
+        btn.onclick = () => {
+            if (audio.paused) {
+                audio.play();
+                icon.src = 'miscimages/IconVoiceOnly3.png';
+            } else {
+                audio.pause();
+                icon.src = 'miscimages/IconVoiceOnly2.png';
+            }
+        };
+
+        function enableAudio() {
+            audio.muted = false;
+            audio.volume = 0;
+            audio.play().catch((e) => { console.log('Autoplay prevented:', e); });
+
+            let vol = 0;
+            const fadeIn = setInterval(() => {
+                if (vol < 1) {
+                    vol += 0.05;
+                    audio.volume = Math.min(vol, 1);
+                } else {
+                    clearInterval(fadeIn);
+                }
+            }, 100);
+
+            document.removeEventListener('click', enableAudio);
+        }
+        document.addEventListener('click', enableAudio);
+    </script>
+</body>
+</html>

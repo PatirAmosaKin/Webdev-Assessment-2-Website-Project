@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenless Zone Zero - Gacha System</title>
+  <link rel="stylesheet" href="gacha.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="site-music" src="audio/3-daily-loop-60-daily-leisure-101soundboards.mp3" autoplay loop muted></audio>
+
+  <!-- Top Main Navbar -->
+  <nav class="navbar">
+    <a href="https://zenless.hoyoverse.com/en-us/"><img src="images/zzz.png" alt="ZZZ Logo" class="logo"/></a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="factions.html">Faction</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="gameplay.html">Gameplay</a></li>
+      <li><a href="gacha.html" class="active">Gacha</a></li>
+    </ul>
+    <button id="toggle-music">
+      <img id="audio-icon" src="miscimages/IconVoiceOnly3.png" alt="Audio Toggle" />
+    </button>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="gacha-header">
+    <div class="header-content">
+      <h1 class="gacha-title">GACHA SYSTEM</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="gacha-content">
+    <section class="gacha-section intro" style="clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);">
+      <h2>Zenless Zone Zero's Gacha System</h2>
+      <div class="gacha-grid">
+        <div class="gacha-text">
+          <p>Zenless Zone Zero, HoYoverse's fast-paced urban fantasy ARPG, brings its own unique flavor to the gacha mechanic—an element familiar to fans of games like Genshin Impact or Honkai: Star Rail. If you're diving into New Eridu and want to understand how the gacha works, here's everything you need to know.</p>
+        </div>
+        <div class="gacha-image">
+          <img src="miscimages/signalsearchgachaabout.webp" alt="Gacha Banner" class="banner-image">
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gacha-section what-is" style="clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);">
+      <h2>What Is the Gacha System?</h2>
+      <div class="gacha-grid reverse">
+        <div class="gacha-image">
+          <img src="miscimages/gachazzzabout.jpg" alt="Gacha Mechanics" class="mechanics-image">
+        </div>
+        <div class="gacha-text">
+          <p>In Zenless Zone Zero, the gacha system is how you obtain new Agents (playable characters) and W-Engines (combat gear similar to weapons). The gacha system functions through a Banner or Signal Search format where players spend in-game currency for a chance to pull high-rarity characters or gear.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gacha-section types" style="clip-path: polygon(0 0, 100% 0, 98% 95%, 2% 95%);">
+      <h2>Types of Banners</h2>
+      <div class="banner-cards">
+        <div class="banner-card standard">
+          <div class="card-header">
+            <h3>Standard Banner</h3>
+            <span class="banner-type">Permanent Signal Search</span>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Available at all times.</li>
+              <li>Includes a wide variety of Agents and W-Engines.</li>
+              <li>5-star drops have a low base rate (~0.6%) with a soft pity starting at 70 pulls.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="banner-card limited">
+          <div class="card-header">
+            <h3>Limited-Time Character Banner</h3>
+            <span class="banner-type">Rotating Event</span>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Rotates regularly.</li>
+              <li>Features a limited 5-star Agent with increased drop rates.</li>
+              <li>Guarantees the featured character within 90 pulls (hard pity), with a 50/50 chance mechanic often in place—if you lose the 50/50, your next 5-star is guaranteed to be the featured one.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="banner-card weapon">
+          <div class="card-header">
+            <h3>W-Engine Banner</h3>
+            <span class="banner-type">Equipment Focus</span>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Focuses on featured high-rarity W-Engines.</li>
+              <li>Uses a separate currency from character banners.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gacha-section currencies" style="clip-path: polygon(2% 5%, 98% 5%, 100% 100%, 0 100%);">
+      <h2>Pull Currencies</h2>
+      <div class="currency-container">
+        <div class="currency-item">
+          <div class="currency-icon master"></div>
+          <div class="currency-info">
+            <h3>Master Tapes</h3>
+            <p>Used for the Standard Banner.</p>
+          </div>
+        </div>
+
+        <div class="currency-item">
+          <div class="currency-icon encrypted"></div>
+          <div class="currency-info">
+            <h3>Encrypted Master Tapes</h3>
+            <p>Used for Limited Banners.</p>
+          </div>
+        </div>
+
+        <div class="currency-item">
+          <div class="currency-icon polychromes"></div>
+          <div class="currency-info">
+            <h3>Polychromes</h3>
+            <p>Premium currency that can be converted into either tape type.</p>
+          </div>
+        </div>
+
+        <div class="currency-item">
+          <div class="currency-icon boopons"></div>
+          <div class="currency-info">
+            <h3>Boopons</h3>
+            <p>Used in a separate "basic" banner primarily for lower-tier items or beginner pulls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gacha-section pity" style="clip-path: polygon(0 5%, 100% 0, 95% 100%, 5% 95%);">
+      <h2>Pity System</h2>
+      <div class="pity-container">
+        <div class="pity-text">
+          <p>Zenless Zone Zero uses a pity system to ensure players eventually receive high-rarity pulls:</p>
+          <ul class="pity-list">
+            <li><span class="highlight five-star">5-Star Guarantee:</span> Every 90 pulls guarantees a 5-star Agent or item, depending on the banner.</li>
+            <li><span class="highlight four-star">4-Star Guarantee:</span> Every 10 pulls guarantees at least one 4-star.</li>
+          </ul>
+          <p class="note">Pity counts are banner-specific and do not carry over between banners (except between event banners of the same type).</p>
+        </div>
+        <div class="pity-meter">
+          <div class="meter-container">
+            <div class="meter-label">5★ Pity</div>
+            <div class="meter-track">
+              <div class="meter-fill five-star" style="width: 70%;"></div>
+              <div class="meter-marker" style="left: 70%;">Soft Pity</div>
+              <div class="meter-marker" style="left: 100%;">Hard Pity</div>
+            </div>
+            <div class="meter-ticks">
+              <span>0</span>
+              <span>10</span>
+              <span>20</span>
+              <span>30</span>
+              <span>40</span>
+              <span>50</span>
+              <span>60</span>
+              <span>70</span>
+              <span>80</span>
+              <span>90</span>
+            </div>
+          </div>
+          <div class="meter-container">
+            <div class="meter-label">4★ Pity</div>
+            <div class="meter-track">
+              <div class="meter-fill four-star" style="width: 80%;"></div>
+              <div class="meter-marker" style="left: 100%;">Guaranteed</div>
+            </div>
+            <div class="meter-ticks">
+              <span>0</span>
+              <span>2</span>
+              <span>4</span>
+              <span>6</span>
+              <span>8</span>
+              <span>10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gacha-section strategy" style="clip-path: polygon(5% 0, 95% 5%, 100% 95%, 0 100%);">
+      <h2>F2P and Gacha Strategy</h2>
+      <div class="strategy-container">
+        <p>While ZZZ offers generous early-game pulls and login rewards, managing your currencies is key. Players are advised to:</p>
+        <div class="strategy-tips">
+          <div class="tip-card">
+            <div class="tip-icon save"></div>
+            <p>Save Encrypted Tapes for limited-time characters.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon prioritize"></div>
+            <p>Prioritize characters over W-Engines unless a specific synergy is needed.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon track"></div>
+            <p>Use free pulls wisely and track your pity count.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="gacha-section final" style="clip-path: polygon(0 5%, 100% 0, 98% 100%, 2% 100%);">
+      <h2>Final Thoughts</h2>
+      <p>Whether you're a seasoned gacha veteran or new to the system, Zenless Zone Zero provides a slick, stylish take on the formula with fair mechanics and a rewarding progression path. As always, pull responsibly and enjoy the thrill of the drop!</p>
+    </section>
+  </main>
+
+  <script>
+    // Audio Controls
+    const audio = document.getElementById('site-music');
+    const btn = document.getElementById('toggle-music');
+    const icon = document.getElementById('audio-icon');
+
+    btn.onclick = () => {
+      if (audio.paused) {
+        audio.play();
+        icon.src = 'miscimages/IconVoiceOnly3.png';
+      } else {
+        audio.pause();
+        icon.src = 'miscimages/IconVoiceOnly2.png';
+      }
+    };
+
+    function enableAudio() {
+      audio.muted = false;
+      audio.volume = 0;
+      audio.play().catch((e) => { console.log('Autoplay prevented:', e); });
+
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05;
+          audio.volume = Math.min(vol, 1);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 100);
+
+      document.removeEventListener('click', enableAudio);
+    }
+    document.addEventListener('click', enableAudio);
+  </script>
+
+</body>
+</html>
